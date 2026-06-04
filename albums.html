@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アルバム — 鏡面人世</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .albums-page { padding-bottom: var(--gap-xl); }
+
+    /* ── アルバムカード ──────────────── */
+    .album-section {
+      margin-bottom: 6rem;
+      scroll-margin-top: 5rem;
+    }
+
+    .album-layout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    /* ジャケット */
+    .album-jacket {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+    }
+
+    .album-jacket-inner {
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      position: relative;
+    }
+
+    .album-jacket-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+
+    .album-jacket-glow {
+      position: absolute;
+      width: 60%; height: 60%;
+      border-radius: 50%;
+      filter: blur(40px);
+      opacity: 0.2;
+    }
+
+    .album-jacket-sub {
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      z-index: 1;
+      opacity: 0.6;
+    }
+
+    .album-jacket-title {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      letter-spacing: 0.2em;
+      color: rgba(240,237,232,0.95);
+      z-index: 1;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .album-jacket-title-en {
+      font-family: var(--font-serif);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      color: rgba(240,208,64,0.6);
+      z-index: 1;
+      text-align: center;
+      margin-top: 0.3rem;
+    }
+
+    .album-jacket-date {
+      position: absolute;
+      bottom: 1.5rem; right: 1.5rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      z-index: 1;
+      opacity: 0.5;
+    }
+
+    /* 波紋ループ（箔金色） */
+    .album-jacket-ripple {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 0;
+    }
+    .album-jacket-ripple span {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(240,208,64,0.18);
+      box-shadow: 0 0 6px rgba(240,208,64,0.06);
+      animation: ripple 5s ease-out infinite;
+    }
+    .album-jacket-ripple span:nth-child(1) { width: 40%; height: 40%; animation-delay: 0s; }
+    .album-jacket-ripple span:nth-child(2) { width: 65%; height: 65%; animation-delay: 1.5s; }
+    .album-jacket-ripple span:nth-child(3) { width: 90%; height: 90%; animation-delay: 3s; }
+
+    /* アートワーク画像（設定時はCSS装飾を上書き） */
+    .album-jacket-img {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      display: block;
+    }
+    /* 画像ありの場合のオーバーレイ（下部グラデ） */
+    .album-jacket-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 2.5rem 1.5rem 1.2rem;
+      background: linear-gradient(to top, rgba(10,6,2,0.85) 0%, transparent 100%);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.3rem;
+    }
+    .album-jacket-overlay .album-jacket-title  { font-size: 1.5rem; }
+    .album-jacket-overlay .album-jacket-sub    { position: static; font-size: 0.6rem; letter-spacing: 0.3em; color: var(--kin); opacity: 1; }
+    .album-jacket-overlay .album-jacket-date   { position: static; opacity: 0.6; }
+
+    .album-info-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      color: var(--kin);
+      margin-bottom: 0.8rem;
+    }
+
+    .album-info-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      line-height: 1.2;
+      margin-bottom: 0.3rem;
+    }
+
+    .album-info-title-en {
+      font-family: var(--font-serif);
+      font-size: clamp(0.8rem, 1.5vw, 1rem);
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      color: rgba(240,208,64,0.65);
+      margin-bottom: 0.5rem;
+    }
+
+    .album-info-meta {
+      font-size: 0.75rem;
+      color: var(--usuzumi);
+      letter-spacing: 0.15em;
+      margin-bottom: 1.5rem;
+    }
+
+    .album-info-concept {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      line-height: 1.8;
+      color: rgba(240,237,232,0.6);
+      border-left: 2px solid rgba(196,162,101,0.4);
+      padding-left: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .album-info-desc {
+      font-size: 0.85rem;
+      line-height: 2;
+      color: rgba(240,237,232,0.7);
+      letter-spacing: 0.08em;
+      margin-bottom: 2.5rem;
+    }
+
+    /* トラックリスト */
+    .album-tracks-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      color: var(--kin);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .album-tracks-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(201,168,76,0.18);
+    }
+
+    .album-tracks {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: rgba(201,168,76,0.18);
+      border: 1px solid rgba(201,168,76,0.18);
+    }
+
+    .album-track {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1rem 1.2rem;
+      background: rgba(37,26,12,0.4);
+      transition: background 0.3s, transform 0.3s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .album-track:hover {
+      background: rgba(61,42,16,0.5);
+      transform: translateX(4px);
+    }
+
+    .album-track-num {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: rgba(201,168,76,0.18);
+      width: 1.5rem;
+      text-align: right;
+    }
+    .album-track-title {
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      letter-spacing: 0.1em;
+      flex: 1;
+    }
+    .album-track-reading {
+      font-size: 0.7rem;
+      color: var(--usuzumi);
+      letter-spacing: 0.1em;
+    }
+    .album-track-arrow {
+      color: var(--kin);
+      opacity: 0;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .album-track:hover .album-track-arrow {
+      opacity: 1;
+      transform: translateX(4px);
+    }
+
+    /* レスポンシブ */
+    @media (max-width: 800px) {
+      .album-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .album-jacket {
+        max-width: 280px;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <a href="index.html" class="nav-logo">鏡面人世</a>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="songs.html">Songs</a>
+    <a href="albums.html">Albums</a>
+  </nav>
+  <button class="nav-burger" id="burger" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="nav-mobile" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="songs.html">Songs</a>
+  <a href="albums.html">Albums</a>
+</nav>
+
+<div class="page-header">
+  <p class="page-header-en">ALBUMS</p>
+  <h1 class="page-header-title">アルバム</h1>
+  <p class="page-header-desc">〜数多の世界、浮世の欠片〜</p>
+</div>
+
+<main class="albums-page">
+  <div class="container" id="albums-container"></div>
+</main>
+
+<footer class="footer"></footer>
+
+<script src="data.js"></script>
+<script src="main.js"></script>
+<script>
+  const container = document.getElementById('albums-container');
+
+  ALBUMS.forEach(album => {
+    const songs = SONGS.filter(s => s.album === album.id)
+                       .sort((a, b) => a.track - b.track);
+
+    const section = document.createElement('section');
+    section.className = 'album-section fade-in';
+    section.id = album.id;
+
+    // ジャケット：artworkあり→画像、なし→CSS装飾
+    const jacketContent = album.artwork ? `
+      <img src="${album.artwork}" alt="${album.titleJa || album.title}" class="album-jacket-img">
+      <div class="album-jacket-overlay">
+        <div class="album-jacket-sub">${album.subtitle}</div>
+        <div class="album-jacket-title">${album.titleJa || album.title}</div>
+        ${album.titleEn ? `<div class="album-jacket-title-en">${album.titleEn}</div>` : ''}
+        <div class="album-jacket-date">${album.releaseDate}</div>
+      </div>
+    ` : `
+      <div class="album-jacket-inner" style="background-color:${album.coverColor};">
+        <div class="album-jacket-grid"></div>
+        <div class="album-jacket-ripple">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="album-jacket-glow" style="background:${album.coverAccent};"></div>
+        <div class="album-jacket-sub">${album.subtitle}</div>
+        <div class="album-jacket-title">${album.titleJa || album.title}</div>
+        ${album.titleEn ? `<div class="album-jacket-title-en">${album.titleEn}</div>` : ''}
+        <div class="album-jacket-date">${album.releaseDate}</div>
+      </div>
+    `;
+
+    section.innerHTML = `
+      <div class="album-layout">
+        <!-- ジャケット -->
+        <div class="album-jacket">${jacketContent}</div>
+
+        <!-- アルバム情報 -->
+        <div class="album-info">
+          <div class="album-info-label">${album.subtitle}</div>
+          <h2 class="album-info-title">${album.titleJa || album.title}</h2>
+          ${album.titleEn ? `<p class="album-info-title-en">${album.titleEn}</p>` : ''}
+          <p class="album-info-meta">${album.releaseDate} &nbsp;／&nbsp; ${album.trackCount}曲収録</p>
+          <p class="album-info-concept">${album.concept}</p>
+          <p class="album-info-desc">${album.description}</p>
+
+          <!-- トラックリスト -->
+          <div class="album-tracks-label">TRACK LIST</div>
+          <div class="album-tracks">
+            ${songs.map(s => `
+              <a href="song.html?id=${s.id}" class="album-track">
+                <span class="album-track-num">${String(s.track).padStart(2,'0')}</span>
+                <span class="album-track-title">${s.title}</span>
+                <span class="album-track-reading">${s.reading}</span>
+                <span class="album-track-arrow">→</span>
+              </a>
+            `).join('')}
+          </div>
+        </div>
+      </div>
+    `;
+
+    container.appendChild(section);
+  });
+
+  // アルバムがない場合
+  if (ALBUMS.length === 0) {
+    container.innerHTML = '<p style="color:var(--usuzumi);text-align:center;padding:5rem;letter-spacing:0.15em;">アルバムはまだありません。</p>';
+  }
+
+  setTimeout(initFadeIn, 100);
+
+  // URLハッシュへスクロール
+  if (location.hash) {
+    setTimeout(() => {
+      document.querySelector(location.hash)?.scrollIntoView({ behavior: 'smooth' });
+    }, 300);
+  }
+</script>
+</body>
+</html>
