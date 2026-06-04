@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>楽曲一覧 — 鏡面人世</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .songs-page { padding-bottom: var(--gap-xl); }
+
+    /* フィルター */
+    .filter-bar {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .filter-btn {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      padding: 0.5rem 1.2rem;
+      border: 1px solid rgba(201,168,76,0.18);
+      color: var(--usuzumi);
+      background: transparent;
+      transition: all 0.3s var(--ease);
+      cursor: pointer;
+    }
+    .filter-btn:hover,
+    .filter-btn.active {
+      border-color: var(--kin);
+      color: var(--shiro);
+      background: rgba(201,168,76,0.18);
+    }
+
+    /* 楽曲グリッド（トップページと同じスタイル） */
+    .songs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1px;
+      background: rgba(201,168,76,0.10);
+      border: 1px solid rgba(201,168,76,0.10);
+    }
+
+    .songs-grid .song-card {
+      background: var(--cha-deep);
+      border: none;
+    }
+    .songs-grid .song-card:hover {
+      background: rgba(61,42,16,0.7);
+      transform: none;
+    }
+  </style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <a href="index.html" class="nav-logo">鏡面人世</a>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="songs.html">Songs</a>
+    <a href="albums.html">Albums</a>
+  </nav>
+  <button class="nav-burger" id="burger" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="nav-mobile" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="songs.html">Songs</a>
+  <a href="albums.html">Albums</a>
+</nav>
+
+<div class="page-header">
+  <p class="page-header-en">SONGS</p>
+  <h1 class="page-header-title">楽曲一覧</h1>
+  <p class="page-header-desc">水面に揺れる言葉たちを、一曲ずつ。</p>
+</div>
+
+<main class="songs-page">
+  <div class="container">
+    <!-- フィルター -->
+    <div class="filter-bar fade-in" id="filter-bar">
+      <button class="filter-btn active" data-album="all">すべて</button>
+    </div>
+
+    <!-- 件数 -->
+    <p class="songs-count fade-in" id="songs-count"></p>
+
+    <!-- 楽曲グリッド -->
+    <div class="songs-grid fade-in" id="songs-list"></div>
+  </div>
+</main>
+
+<footer class="footer"></footer>
+
+<script src="data.js"></script>
+<script src="main.js"></script>
+<script>
+  let currentAlbum = 'all';
+
+  // フィルターボタン生成
+  const filterBar = document.getElementById('filter-bar');
+  ALBUMS.forEach(album => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn';
+    btn.dataset.album = album.id;
+    btn.textContent = album.title;
+    filterBar.appendChild(btn);
+  });
+
+  // フィルター切り替え
+  filterBar.addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    currentAlbum = btn.dataset.album;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderList();
+  });
+
+  // リスト描画
+  function renderList() {
+    const list = document.getElementById('songs-list');
+    const count = document.getElementById('songs-count');
+    list.innerHTML = '';
+
+    const filtered = currentAlbum === 'all'
+      ? SONGS
+      : SONGS.filter(s => s.album === currentAlbum);
+
+    count.textContent = `${filtered.length} 曲`;
+
+    if (filtered.length === 0) {
+      list.innerHTML = '<p style="text-align:center;padding:5rem 2rem;color:var(--usuzumi);font-size:0.85rem;letter-spacing:0.15em;">楽曲が見つかりません。</p>';
+      return;
+    }
+
+    // トップページと同じ createSongCard() を使用
+    filtered.forEach(song => {
+      list.appendChild(createSongCard(song, true));
+    });
+
+    initFadeIn();
+  }
+
+  renderList();
+</script>
+</body>
+</html>
