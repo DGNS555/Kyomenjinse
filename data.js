@@ -637,12 +637,12 @@ const ALBUMS = [
     titleJa: "裏唄集",
     titleEn: "Hidden Songs of Ukiyo",
     subtitle: "1st Album",
-    releaseDate: "2024.03.21",
-    artwork: "",             // アルバムアートワーク（例: "images/albums/album-01.jpg"）
-    coverColor: "#1c1005",
-    coverAccent: "#c9a84c",
-    description: "水面に映る世界のように、現実と幻の境界を歌ったファーストアルバム。全6曲収録のうち、3曲をこのアルバムに収録。静謐な藍の世界へようこそ。",
-    trackCount: 3,
+    releaseDate: "2026.03.26",
+    artwork: "images/albums/album-01.png",",             // アルバムアートワーク（例: "images/albums/album-01.jpg"）
+    coverColor: "",
+    coverAccent: "",
+    description: "鏡面人世ファーストアルバム。全8曲収録。",
+    trackCount: 8,
     concept: "鏡に映った世界は、どこか少しだけ歪んでいる。"
   },
   {
