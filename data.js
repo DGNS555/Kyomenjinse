@@ -639,7 +639,7 @@ const ALBUMS = [
     subtitle: "1st Album",
     releaseDate: "2026.03.26",
     artwork: "images/albums/album-01.png",             // アルバムアートワーク（例: "images/albums/album-01.jpg"）
-    coverColor: "#",
+    coverColor: "",
     coverAccent: "#c9a84c",
     description: "鏡面人世ファーストアルバム。全8曲収録。",
     trackCount: 8,
