@@ -266,8 +266,7 @@ Still your demon’s standing there.
 
 Words you throw are sharper than beans,
 Piercing bone and echoing deep.
-Don’t just laugh and turn away—
-Face the eyes you try to flee.
+Don’t just laugh and turn away—Face the eyes you try to flee.
 The demon breathes inside of you.
 
 　Fuku outside, Oni inside
