@@ -562,109 +562,57 @@ which one of us is real?
     color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/04.jpg"）
     previewAudio: "",        // 試聴音源パス（例: "audio/04-preview.mp3"）
-    bandcamp: "",            // BandcampのURL
-    base: ""                 // BASEのURL
+    bandcamp: "https://kyomenjinse.bandcamp.com/album/hidden-songs-of-ukiyo",            // BandcampのURL
+    base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   },
   {
     id: "05",
-    title: "透明な火",
-    reading: "とうめいなひ",
-    album: "album-02",
-    track: 2,
-    releaseDate: "2024.09.10",
-    youtubeId: "dQw4w9WgXcQ",
-    description: "見えないけれど確かに燃えている。感情の核にある、静かな衝動の歌。",
+    title: "虚実瓦版",
+    titleEn: "Lost in Echo Chamber",
+    reading: "きょじつかわらばん",
+    album: "album-01",
+    track: 5,
+    releaseDate: "2026.03.03",
+    youtubeId: "",
+    description: "",
     lyricsJa: ``,
-    lyricsEn: `Invisible, yet burning—
-a transparent flame deep in my chest,
-unnoticed by anyone,
-flickering on and on.
-
-Not anger, not sorrow—
-just the will to keep existing.
-That alone moves me,
-here in the center of a cold world.
-
-　Don't go out, that flame—
-　small is fine.
-　Transparent is fine.
-　Just keep burning.
-
-Still lit after every storm,
-it doesn't matter if no one sees.
-Only I know it—
-this transparent fire living in my chest.`,
-    tags: ["衝動", "意志", "静かな強さ"],
-    color: "#1e1208",
+    lyricsEn: ``,
+    tags: ["情報", "嘘", "真実"],
+    color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/05.jpg"）
     previewAudio: "",        // 試聴音源パス（例: "audio/05-preview.mp3"）
-    bandcamp: "",            // BandcampのURL
-    base: ""                 // BASEのURL
+    bandcamp: "https://kyomenjinse.bandcamp.com/album/hidden-songs-of-ukiyo",            // BandcampのURL
+    base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   },
   {
     id: "06",
-    title: "月下の独白",
-    reading: "げっかのどくはく",
-    album: "album-02",
-    track: 3,
-    releaseDate: "2024.09.10",
-    youtubeId: "dQw4w9WgXcQ",
-    description: "月の下でひとり語りかける、誰にも届かないはずの言葉たち。",
-    lyricsJa: `月よ、聞いているか
-誰にも言えない話を
-今夜だけあなたに
-全部打ち明けてもいいか
-
-笑っているふりをして
-泣きそうになる夜がある
-それでも朝になれば
-また誰かの前に立つ
-
-　月だけが知っている
-　私の本当の声を
-　丸く欠けても
-　見守ってくれている
-
-月下の独白を終えて
-少しだけ軽くなった気がした
-また明日も生きていける
-そんな気がしてきた`,
-    lyricsEn: `Moon, are you listening?
-To the things I can tell no one—
-just for tonight, may I
-confess everything to you?
-
-There are nights when I pretend to smile
-while on the verge of tears.
-Even so, when morning comes
-I stand before someone again.
-
-　Only the moon knows
-　my true voice—
-　even when it wanes and breaks,
-　it watches over me.
-
-When the monologue under the moon ends,
-I feel just a little lighter.
-I think I can live through tomorrow too—
-that's how it feels.`,
-    tags: ["独白", "月", "深夜"],
-    color: "#251508",
+    title: "飛耳長目",
+    titleEn: "Seeing Through the Lies",
+    reading: "ひじちょうもく",
+    album: "album-01",
+    track: 6,
+    releaseDate: "2026.03.11",
+    youtubeId: "",
+    description: "",
+    lyricsJa: ``,
+    lyricsEn: ``,
+    tags: ["陰謀", "諜報", "裏社会"],
+    color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/06.jpg"）
     previewAudio: "",        // 試聴音源パス（例: "audio/06-preview.mp3"）
-    bandcamp: "",            // BandcampのURL
-    base: ""                 // BASEのURL
+    bandcamp: "https://kyomenjinse.bandcamp.com/album/hidden-songs-of-ukiyo",            // BandcampのURL
+    base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   },
   {
     id: "07",
-    title: "影遊び",
-    titleEn: "Play with Shadows",
-    reading: "かげあそび",
+    title: "お江戸大炎上",
+    titleEn: "Edo is Burning",
+    reading: "おえどだいえんじょう",
     album: "album-01",
-    track: 4,
-    releaseDate: "2026.02.26",
+    track: 7,
+    releaseDate: "2026.03.15",
     youtubeId: "",
-    artwork: "images/songs/影遊び.png",
+    artwork: "",
     previewAudio: "audio/鏡面人世 - 影遊び.mp3",
     bandcamp: "https://kyomenjinse.bandcamp.com/album/hidden-songs-of-ukiyo",
     base: "",
