@@ -612,15 +612,15 @@ which one of us is real?
     track: 7,
     releaseDate: "2026.03.15",
     youtubeId: "",
-    artwork: "",
-    previewAudio: "audio/鏡面人世 - 影遊び.mp3",
-    bandcamp: "https://kyomenjinse.bandcamp.com/album/hidden-songs-of-ukiyo",
-    base: "",
-    description: "夕焼けの影遊び――気づけば隣に居るのは、自分ではない“もうひとつの影”。",
+    description: "",
     lyricsJa: ``,
     lyricsEn: ``,
-    tags: ["Folk", "夕焼け", "影"],
-    color: ""
+    tags: ["炎上", "火消し", ""],
+    color: "",
+    artwork: "",
+    previewAudio: "",
+    bandcamp: "https://kyomenjinse.bandcamp.com/album/hidden-songs-of-ukiyo",
+    base: "",
   }
 ];
 
@@ -641,15 +641,15 @@ const ALBUMS = [
   },
   {
     id: "album-02",
-    title: "乾いた季節に", // 後方互換のため残す
-    titleJa: "乾いた季節に",
-    titleEn: "",           // 英語タイトルなし → 非表示
+    title: "人情景 - Life in Ukiyo", // 後方互換のため残す
+    titleJa: "人情景",
+    titleEn: "Life in Ukiyo",           // 英語タイトルなし → 非表示
     subtitle: "2nd Album",
-    releaseDate: "2024.09.10",
+    releaseDate: "2026.06.10",
     artwork: "images/albums/album-02.png",             // アルバムアートワーク（例: "images/albums/album-02.jpg"）
     coverColor: "#261408",
     coverAccent: "#e0c97a",
-    description: "乾燥した空気の中で、それでも生き続けようとする意志を刻んだセカンドアルバム。砂や火、月などの自然のモチーフを通じて、内なる感情を描く。",
+    description: "セカンドアルバム。",
     trackCount: 7,
     concept: "乾いているから、火がつく。"
   }
