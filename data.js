@@ -448,52 +448,67 @@ Me… you… or perhaps someone else?`,
   },
   {
     id: "04",
-    title: "砂時計の砂",
-    reading: "すなどけいのすな",
-    album: "album-02",
-    track: 1,
-    releaseDate: "2024.09.10",
-    youtubeId: "dQw4w9WgXcQ",
-    description: "時間という砂が指の間からこぼれていく、哀愁のミドルテンポ。",
-    lyricsJa: `砂が落ちていく
-止められない時間の中で
-あなたのことを
-何度思い返しただろう
+    title: "影遊び",
+    titleEn: "Play with Shadows",
+    reading: "かげあそび",
+    album: "album-01",
+    track: 4,
+    releaseDate: "2026.02.26",
+    youtubeId: "",
+    description: "夕焼けの影遊び――気づけば隣に居るのは、自分ではない“もうひとつの影”。",
+    lyricsJa: `夕焼け 小焼け
+誰の影
 
-ひっくり返せば
-また始まるけれど
-同じ時間は
-二度と戻らない
+路地裏 朱に染まりゃ
+ぬるりと影が腕を掴む
+「もういいかい」って耳鳴りさ
+振り向きゃ誰も居ないじゃないか
 
-　砂時計の砂よ
-　もっとゆっくり落ちてくれ
-　あの日に戻れるなら
-　何を変えるだろう
+石畳ひび割れ夕が刺す
+足音ひとつ溶けちまう
+帰るはずだろあたしはさ
+影だけ先へ滑り出す
 
-形のない後悔と
-消えない温もりを抱えて
-今日も砂が落ちていく
-さらさら、さらさらと`,
-    lyricsEn: `The sand falls—
-in time that cannot be stopped,
-how many times have I
-thought back to you?
+影踏み　鬼さん　此方へと
+境越えりゃ戻れない
+名を呼ぶ声が絡みつく
+喉の奥まで茜色
 
-Turn it over
-and it starts again,
-but the same moment
-never returns.
+　影　影　どこへ行く
+　茜空ぁの向こう側
+　手ぇ引くなって言ってんだ
+　帰れない　帰れない
 
-　Sand of the hourglass,
-　fall a little slower.
-　If I could go back to that day,
-　what would I change?
+　影　影　誰のもの
+　あたしは此処にいるだろう
+　笑ってるのは誰だよ
+　あたしじゃない　あたしじゃない
 
-Carrying formless regret
-and a warmth that won't fade,
-the sand falls again today—
-softly, softly.`,
-    tags: ["時間", "後悔", "ミドルテンポ"],
+年ごと増えてく消えた数
+帳面の隅で終いかよ
+「訳あり」で片付ける
+冷てぇ世間のやり口さ
+
+誰かの娘　誰かの影
+すうっと夕闇　飲み込んで
+探すふりだけしてみせて
+本当は誰も見ちゃいない
+
+ねぇ
+影ってのは
+どっちが本物だい？
+
+　影　影　連れて行く
+　宵の底まで堕としてく
+　遊びじゃないと気づいたよ
+　遅すぎる　遅すぎる
+
+　影　影　もう居ない
+　あたしの名を呼ぶなよ
+　「ただいま」さえ言えぬまま
+　夕焼けに裂かれてく`,
+    lyricsEn: ``,
+    tags: ["影", "夕焼け", "失踪"],
     color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/04.jpg"）
     previewAudio: "",        // 試聴音源パス（例: "audio/04-preview.mp3"）
@@ -509,25 +524,7 @@ softly, softly.`,
     releaseDate: "2024.09.10",
     youtubeId: "dQw4w9WgXcQ",
     description: "見えないけれど確かに燃えている。感情の核にある、静かな衝動の歌。",
-    lyricsJa: `見えないけど燃えている
-胸の奥の透明な火
-誰にも気づかれないまま
-ずっと揺れ続けている
-
-怒りでも悲しみでもなく
-ただ在り続けようとする意志
-それだけが私を動かす
-冷えた世界の真ん中で
-
-　消えないで、その火よ
-　小さくてもいい
-　透明でも構わない
-　ただ在り続けて
-
-嵐が過ぎてもまだ灯る
-誰かに見えなくてもいい
-私だけが知っている
-この胸に宿る透明な火`,
+    lyricsJa: ``,
     lyricsEn: `Invisible, yet burning—
 a transparent flame deep in my chest,
 unnoticed by anyone,
