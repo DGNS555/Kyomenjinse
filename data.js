@@ -507,7 +507,57 @@ Me… you… or perhaps someone else?`,
 　あたしの名を呼ぶなよ
 　「ただいま」さえ言えぬまま
 　夕焼けに裂かれてく`,
-    lyricsEn: ``,
+    lyricsEn: `Sunset glow, fading light
+Whose shadow is this?
+
+When the alley turns crimson red,
+a slick shadow grabs my arm.
+"Are you ready?" it whispers in my ear—
+I turn around, but no one is there.
+
+Cracked stone pavement, evening pierces through,
+a single footstep melts away.
+I should be heading home by now,
+yet only my shadow slips ahead.
+
+Shadow-stepping, calling me near,
+once I cross the line, there's no return.
+A voice calling out my name
+wraps around my throat in crimson dusk.
+
+　Shadow, shadow—where are you going?
+　Beyond the burning evening sky.
+　Don't you dare pull my hand,
+　I can't go back, I can't go back.
+ 
+　Shadow, shadow—who do you belong to?
+　I'm standing right here, aren't I?
+　Who is it that's laughing there?
+　It's not me… it's not me…
+ 
+Each year, the number grows—
+names that quietly disappear.
+Left to fade in the corner of a ledger,
+dismissed with "there were circumstances."
+
+Someone's daughter, someone's shadow,
+swallowed whole by the falling night.
+They pretend to search, just for show,
+but deep down, no one truly looks.
+
+Hey…
+Tell me—
+which one of us is real?
+
+　Shadow, shadow, taking me away,
+　dragging me down into the depths of night.
+　I know now this isn't a game,
+　but it's too late… far too late.
+ 
+　Shadow, shadow—I'm already gone,
+　don't call my name anymore.
+　Before I can even say "I'm home,"
+　I'm torn apart by the setting sun.`,
     tags: ["影", "夕焼け", "失踪"],
     color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/04.jpg"）
