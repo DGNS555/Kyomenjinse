@@ -651,7 +651,7 @@ const ALBUMS = [
     titleEn: "",           // 英語タイトルなし → 非表示
     subtitle: "2nd Album",
     releaseDate: "2024.09.10",
-    artwork: "",             // アルバムアートワーク（例: "images/albums/album-02.jpg"）
+    artwork: "images/albums/album-02.png",             // アルバムアートワーク（例: "images/albums/album-02.jpg"）
     coverColor: "#261408",
     coverAccent: "#e0c97a",
     description: "乾燥した空気の中で、それでも生き続けようとする意志を刻んだセカンドアルバム。砂や火、月などの自然のモチーフを通じて、内なる感情を描く。",
