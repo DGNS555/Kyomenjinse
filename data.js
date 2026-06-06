@@ -574,7 +574,7 @@ which one of us is real?
     track: 5,
     releaseDate: "2026.03.03",
     youtubeId: "",
-    description: "",
+    description: "嘘と真が入り混じる情報社会を、江戸言葉と和風ラップで映す鏡面人世流、現代浮世絵。",
     lyricsJa: `宵より流るる風聞の
 真か虚かも知らぬ間に
 瓦版は空を飛び
@@ -690,7 +690,7 @@ Speak sweet lies and earn applause.
 Truth hides quietly, holding its breath,
 Lies pound drums through the town.
 The closer you lean to listen, The farther away it slips.
-Close your eyes — And somehow it grows clearer.
+Close your eyes—And somehow it grows clearer.
 
 　Truth or lie?
 　Lie or truth?
@@ -731,9 +731,120 @@ Close your eyes — And somehow it grows clearer.
     track: 6,
     releaseDate: "2026.03.11",
     youtubeId: "",
-    description: "",
-    lyricsJa: ``,
-    lyricsEn: ``,
+    description: "甘き噂の裏を見抜け──世に蔓延る企みを、飛耳長目の眼差しで暴く江戸民謡ラップ。",
+    lyricsJa: `
+表通りゃ祭り囃子
+裏路地じゃ密談囃子
+旦那衆ゃ綺麗事
+袖の下じゃ腹探り
+
+もっともらしく並べた話
+笑顔の裏で銭数える
+耳にゃ甘ぇが舌にゃ毒
+知らずに飲めばそれ傀儡
+
+　ほいさ　ほいさ　目ぇ開けな
+　世間はからくり芝居でさぁ
+　そらよ　そらよ　騙されな
+　声でかい程に裏がある
+　ほいさ　ほいさ　聞き分けな
+　甘ぇ噂にゃ刺がある
+　耳を澄まし目を凝らしゃ
+　真も嘘も見えてくらぁ
+
+井戸端話しぁ火の粉の種
+誰かが撒いて誰かが燃やす
+正義だなんて旗掲げ
+裏じゃ誰かが糸を引く
+
+旦那ちょいと考えな
+その騒ぎ誰が得をする
+銭の流れを追ってみりゃ
+影の主も見えてくらぁ
+
+　ほいさ　ほいさ　目ぇ開けな
+　世間はからくり芝居でさぁ
+　そらよ　そらよ　踊るなよ
+　笛吹く奴は何処に居る
+　ほいさ　ほいさ　聞き分けな
+　甘ぇ言葉にゃ裏がある
+　耳と目玉を働かしゃ
+　闇の仕掛けも透けて来らぁ
+
+瓦の噂ぁ半分芝居
+世間話ぁ半分商い
+踊る阿呆に見る阿呆
+どっちも阿呆じゃ世は変わらん
+
+耳を飛ばして遠く聞け
+目を長くして先を見ろ
+此れぞ世渡り
+其の名も飛耳長目
+
+　ほいさ　ほいさ　目ぇ開けな
+　世間はからくり芝居でさ
+　そらよ　そらよ　騙されな
+　踊らす奴ぁ何処に居る
+　ほいさ　ほいさ　忘れんな
+　真を見抜くは己次第
+　刃より弓より強ぇのは
+　飛耳長目の知恵袋`,
+    lyricsEn: `On the main street, festival drums resound
+In the back alleys, secret talks go down
+Fine words spoken by the wealthy men
+But behind closed doors, schemes begin
+
+Stories lined up sounding oh so right
+Counting coins behind a smiling light
+Sweet to the ear, but poison on the tongue
+Drink it unaware — now you're the puppet one
+
+　Hoisa, hoisa — open your eyes
+　This whole world's a puppet disguise
+　Sorayo, sorayo — don't be fooled
+　The loudest voices hide the cruel
+　Hoisa, hoisa — listen close
+　Sweet rumors always hide their thorns
+　Sharpen your ears, focus your sight
+　Truth and lies both come to light
+
+Gossip at the well sparks flying flames
+Someone spreads it, someone fans the blaze
+Holding high the banner of “justice” proud
+While hidden hands control the crowd
+
+Hey now, friend — stop and think
+Who gains profit when the chaos sinks?
+Follow the trail where the money streams
+And the shadow master starts to be seen
+
+　Hoisa, hoisa — open your eyes
+　This whole world's a puppet disguise
+　Sorayo, sorayo — don't you dance
+　Who's playing the flute behind this trance?
+　Hoisa, hoisa — hear the truth
+　Sweet words always hide their proof
+　Use your eyes and use your mind
+　Even dark schemes you will find
+
+Half the rumors are theater plays
+Half the chatter is trade these days
+Fools who dance and fools who stare
+Nothing changes if fools are everywhere
+
+Send your ears to places far
+Stretch your sight beyond the dark
+This is how one walks this life
+Its name is Hiji-Chomoku
+
+　Hoisa, hoisa — open your eyes
+　This whole world's a puppet disguise
+　Sorayo, sorayo — don't be fooled
+　Who's pulling strings behind the rule?
+　Hoisa, hoisa — don't forget
+　Truth depends on yourself instead
+　Sharper than blades, stronger than bows
+　Hiji-Chomoku — wisdom knows`,
     tags: ["陰謀", "諜報", "裏社会"],
     color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/06.jpg"）
