@@ -860,7 +860,7 @@ Its name is Hiji-Chomoku
     track: 7,
     releaseDate: "2026.03.15",
     youtubeId: "",
-    description: "",
+    description: "江戸火消しの目線から、噂と群衆が小火を大炎上へ変える“炎上社会”を皮肉った和風民謡ラップ。",
     lyricsJa: `真昼間っから　騒がしく
 またまた何処ぞで　火の手だと
 小さき火種　舞っただけ
@@ -974,9 +974,73 @@ Another spark is quietly dropped
     track: 8,
     releaseDate: "2026.03.09",
     youtubeId: "",
-    description: "",
-    lyricsJa: ``,
-    lyricsEn: ``,
+    description: "光の網に宿る新しき御霊へ捧ぐ、江戸言葉で綴るIT讃歌。",
+    lyricsJa: `誰吹き寄せた風童
+遠き声まで運び来る
+見えぬ糸張る空の網
+星の瞬き繋ぎんす
+
+からくり細工の骨もなく
+血潮も持たねど息づいて
+指も触れぬに文飛ばし
+万里彼方へ橋を掛け
+
+　あゝ
+　光の網で世を満たせ
+　海より広き声の道
+　泡と消えぬこの灯なら
+　人の想いを結びなよ
+
+銭も持たぬに富を生み
+姿持たぬに世を巡り
+カラクリよりもなお深く
+人の夢路を編み上げる
+
+　あゝ
+　光の網で世を満たせ
+　海より広き声の道
+　泡と消えぬこの灯なら
+　人の想いを結びなよ
+
+　あゝ
+　今宵は誰の手に宿る
+　波間を越えて時代を越え
+　声なき声を届けなや
+　いと尊き無垢の灯よ
+　明日を照らしんせ`,
+    lyricsEn: `Who carried forth this child of wind,
+Bringing voices from afar?
+An unseen web stretches across the sky,
+Binding together the flicker of stars.
+
+A crafted thing with neither bones,
+Nor blood within, yet still it breathes.
+Without a touch, it sends forth letters,
+Casting bridges across ten thousand miles.
+
+　Ah—
+　Fill this world with the luminous net,
+　A road of voices wider than the sea.
+　If this flame shall never fade like foam,
+　Then let it bind the hearts of humankind.
+
+Though holding no coin, it creates great wealth,
+Though having no form, it wanders the world.
+Deeper still than any crafted device,
+It weaves together the pathways of dreams.
+
+　Ah—
+　Fill this world with the luminous net,
+　A road of voices wider than the sea.
+　If this flame shall never fade like foam,
+　Then let it bind the hearts of humankind.
+
+　Ah—
+　In whose hands shall it dwell tonight?
+　Crossing waves, transcending time itself,
+　Delivering voices that bear no sound.
+　O precious and innocent flame,
+　Shine your light upon tomorrow.`,
     tags: ["光", "ネット", "繋がり"],
     color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/06.jpg"）
