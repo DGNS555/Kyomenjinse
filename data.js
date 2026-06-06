@@ -861,15 +861,15 @@ Its name is Hiji-Chomoku
     releaseDate: "2026.03.15",
     youtubeId: "",
     description: "江戸火消しの目線から、噂と群衆が小火を大炎上へ変える“炎上社会”を皮肉った和風民謡ラップ。",
-    lyricsJa: `真昼間っから　騒がしく
-またまた何処ぞで　火の手だと
-小さき火種　舞っただけ
-町はたちまち　大騒ぎ
+    lyricsJa: `真昼間っから騒がしく
+またまた何処ぞで火の手だと
+小さき火種舞っただけ
+町はたちまち大騒ぎ
 
-風吹きゃすぐに　燃え上がり
-野次馬共が　群れ集う
-煙の向こうで　騒ぐ声
-火元ぁ知らずに　騒ぐだけ
+風吹きゃすぐに燃え上がり
+野次馬共が群れ集う
+煙の向こうで騒ぐ声
+火元ぁ知らずに騒ぐだけ
 
 　火事でぃ火事でぃまた火事でぃ
 　カンカン鳴らせよ半鐘を
@@ -877,7 +877,7 @@ Its name is Hiji-Chomoku
 　火消し泣かせの世の騒ぎ
 
 誰か落とした火種が一つ
-風に流れて　町を行く
+風に流れて町を行く
 聞いた見たぞと声重ね
 火の粉は遠く飛び散るぞ
 
@@ -929,6 +929,7 @@ Someone dropped a single spark somewhere
 The wind carried it through the streets
 “I heard!” “I saw!” the voices pile up
 And embers scatter far and wide
+
 
 People of the town, remember this well
 Behind every blaze, there’s always a wind
