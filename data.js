@@ -756,12 +756,31 @@ And somehow it grows clearer.
     description: "",
     lyricsJa: ``,
     lyricsEn: ``,
-    tags: ["炎上", "火消し", ""],
+    tags: ["炎上", "火消し", "騒動"],
     color: "",
     artwork: "",
     previewAudio: "",
     bandcamp: "https://kyomenjinse.bandcamp.com/album/hidden-songs-of-ukiyo",
-    base: "",
+    base: "https://kyoumenjinse.base.shop",
+  },
+    {
+    id: "08",
+    title: "光網祝詞",
+    titleEn: "Hymn of the Luminous Net",
+    reading: "こうもうのりと",
+    album: "album-01",
+    track: 8,
+    releaseDate: "2026.03.09",
+    youtubeId: "",
+    description: "",
+    lyricsJa: ``,
+    lyricsEn: ``,
+    tags: ["光", "ネット", "繋がり"],
+    color: "",
+    artwork: "",                 // 曲ジャケット画像（例: "images/songs/06.jpg"）
+    previewAudio: "",        // 試聴音源パス（例: "audio/06-preview.mp3"）
+    bandcamp: "https://kyomenjinse.bandcamp.com/album/hidden-songs-of-ukiyo",            // BandcampのURL
+    base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   }
 ];
 
