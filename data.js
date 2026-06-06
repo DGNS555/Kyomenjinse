@@ -575,8 +575,149 @@ which one of us is real?
     releaseDate: "2026.03.03",
     youtubeId: "",
     description: "",
-    lyricsJa: ``,
-    lyricsEn: ``,
+    lyricsJa: `宵より流るる風聞の
+真か虚かも知らぬ間に
+瓦版は空を飛び
+影は影を産み申す…
+
+へい旦那、聞きなすって
+噂ぁ千里を走るとよ
+筆も持たねぇ町人が
+指先ひとつで世を弾く
+
+その面見せぬ影法師
+口八丁で世直し気取り
+真朱の嘘を塗り重ね
+真の骨は土の下
+
+風吹きゃ桶屋が儲かると
+誰が決めたか因果の糸
+絡まり合うは嘘と実
+解けぬままに朝を待つ
+
+　嘘か真か
+　真か嘘か
+　廻る廻る　風車
+　書き付け一枚　命取り
+　嗚呼、浮きの世は紙芝居
+
+　嘘か真か
+　真か嘘か
+　鳴るや鳴るや拍子木が
+　笑うは誰ぞ泣くは誰
+　鏡の向こうは闇ばかり
+
+早桶担ぐは早すぎる
+噂ひとつで首が飛ぶ
+火の無き所に煙立て
+火事と騒いで銭を取る
+
+見世物小屋の口上師
+涙ひとつで客を釣る
+まこと語ればそりゃ疎まれ
+虚言語れば拍手喝采
+
+真は静かに息潜め
+嘘は太鼓で町を打つ
+耳を貸すほど遠ざかり
+目を閉じるほど鮮やかに
+
+　嘘か真か
+　真か嘘か
+　廻る廻る風車
+　書き付け一枚命取り
+　嗚呼、浮きの世は紙芝居
+
+　嘘か真か
+　真か嘘か
+　鳴るや鳴るや拍子木が
+　笑うは誰ぞ泣くは誰
+　鏡の向こうは闇ばかり
+
+　嘘か真か
+　真か嘘か
+　廻る廻る風車
+　瓦版ひとつ世を裂けば
+　血潮は見えず文字ばかり
+
+　嘘か真か
+　真か嘘か
+　鳴るや鳴るや拍子木が
+　嗚呼、浮世絵よこの現世
+　刷られて消える運命かよ`,
+    lyricsEn: `Rumors drift through the night air,
+Before we know what’s truth or lie.
+News sheets soar across the sky,
+And shadows give birth to more shadows…
+
+Hey mister, lend me your ear,
+They say rumors run a thousand miles.
+Townsfolk with no pen in hand
+Now flick the world with just a fingertip.
+
+Faceless figures in the dark,
+Playing saviors with silver tongues.
+Layer upon layer of crimson lies,
+While truth lies buried beneath the dirt.
+
+“When the wind blows, the bucket seller profits”—
+Who first spun that thread of fate?
+Truth and falsehood twist together,
+Waiting for dawn that never untangles them.
+
+　Truth or lie?
+　Lie or truth?
+　Round and round the windmill spins.
+　One written page can seal your fate,
+　Ah… this floating world’s a paper play.
+ 
+　Truth or lie?
+　Lie or truth?
+　Hear the clack of wooden blocks.
+　Who is laughing? Who will cry?
+　Beyond the mirror—nothing but darkness.
+ 
+Too quick to carry the coffin,
+One rumor and heads begin to roll.
+Smoke rises where no fire burns,
+Shout “fire!” and profit from the panic.
+
+The carnival preacher on the stage,
+Selling tears to lure the crowd.
+Speak the truth and you’ll be shunned,
+Speak sweet lies and earn applause.
+
+Truth hides quietly, holding its breath,
+Lies pound drums through the town.
+The closer you lean to listen,
+The farther away it slips.
+
+Close your eyes—
+And somehow it grows clearer.
+
+　Truth or lie?
+　Lie or truth?
+　Round and round the windmill spins.
+　One written page can seal your fate,
+　Ah… this floating world’s a paper play.
+ 
+　Truth or lie?
+　Lie or truth?
+　Hear the clack of wooden blocks.
+　Who is laughing? Who will cry?
+　Beyond the mirror—nothing but darkness.
+ 
+　Truth or lie?
+　Lie or truth?
+　Round and round the windmill spins.
+　One news sheet can tear the world apart,
+　No blood in sight—only endless words.
+ 
+　Truth or lie?
+　Lie or truth?
+　Hear the clack of wooden blocks.
+　Ah, this world—a painted ukiyo-e,
+　Printed only to fade away.`,
     tags: ["情報", "嘘", "真実"],
     color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/05.jpg"）
