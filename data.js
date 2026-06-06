@@ -689,11 +689,8 @@ Speak sweet lies and earn applause.
 
 Truth hides quietly, holding its breath,
 Lies pound drums through the town.
-The closer you lean to listen,
-The farther away it slips.
-
-Close your eyes—
-And somehow it grows clearer.
+The closer you lean to listen, The farther away it slips.
+Close your eyes — And somehow it grows clearer.
 
 　Truth or lie?
 　Lie or truth?
