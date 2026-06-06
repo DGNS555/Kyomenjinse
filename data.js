@@ -732,8 +732,7 @@ Close your eyes—And somehow it grows clearer.
     releaseDate: "2026.03.11",
     youtubeId: "",
     description: "甘き噂の裏を見抜け──世に蔓延る企みを、飛耳長目の眼差しで暴く江戸民謡ラップ。",
-    lyricsJa: `
-表通りゃ祭り囃子
+    lyricsJa: `表通りゃ祭り囃子
 裏路地じゃ密談囃子
 旦那衆ゃ綺麗事
 袖の下じゃ腹探り
