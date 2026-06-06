@@ -208,17 +208,57 @@
       gap: 2rem;
     }
 
-    .album-preview-card {
+.album-preview-card {
       display: block;
-      position: relative;
       overflow: hidden;
-      aspect-ratio: 1 / 1;
-      transition: transform 0.4s var(--ease);
+      border: 1px solid rgba(201,168,76,0.2);
+      transition: transform 0.4s var(--ease), border-color 0.3s;
     }
-    .album-preview-card:hover { transform: scale(0.98); }
-
+    .album-preview-card:hover {
+      transform: scale(0.98);
+      border-color: rgba(201,168,76,0.45);
+    }
+    .album-card-header {
+      padding: 1rem 1.2rem 0.8rem;
+      background: rgba(30,18,6,0.9);
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+    .album-card-header .album-cover-sub {
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      color: var(--kin);
+      opacity: 0.8;
+    }
+    .album-card-header .album-cover-title {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      letter-spacing: 0.18em;
+      color: var(--kin-pale);
+      line-height: 1.3;
+    }
+    .album-card-header .album-cover-title-en {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: rgba(240,208,64,0.65);
+    }
+    .album-card-header .album-cover-date {
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      color: var(--usuzumi);
+      margin-top: 0.2rem;
+    }
+    .album-card-img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
     .album-cover {
-      width: 100%; height: 100%;
+      width: 100%;
+      aspect-ratio: 1 / 1;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -227,13 +267,11 @@
       position: relative;
       overflow: hidden;
     }
-
     .album-cover::before {
       content: '';
-      position: absolute;
-      inset: 0;
+      position: absolute; inset: 0;
       background: radial-gradient(ellipse at 30% 30%, rgba(201,168,76,0.12) 0%, transparent 70%);
-    }
+      }
 
     .album-cover-title {
       font-family: var(--font-serif);
@@ -513,30 +551,20 @@
     card.className = 'album-preview-card fade-in';
     const enLine = album.titleEn
       ? `<div class="album-cover-title-en">${album.titleEn}</div>` : '';
-
-    // artworkあり→画像+グラデオーバーレイ、なし→CSS装飾
-    const coverInner = album.artwork ? `
-      <div class="album-cover" style="background-color:${album.coverColor}; position:relative;">
-        <img src="${album.artwork}" alt="${album.titleJa || album.title}"
-          style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
-        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,6,2,0.8) 0%,transparent 60%);z-index:1;"></div>
-        <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:0.3rem;margin-top:auto;padding:1.5rem;">
-          <div class="album-cover-sub">${album.subtitle}</div>
-          <div class="album-cover-title">${album.titleJa || album.title}</div>
-          ${enLine}
-        </div>
-        <div class="album-cover-date">${album.releaseDate}</div>
-      </div>
-    ` : `
-      <div class="album-cover" style="background-color:${album.coverColor};">
-        <div class="album-cover-grid"></div>
+    const header = `
+      <div class="album-card-header">
         <div class="album-cover-sub">${album.subtitle}</div>
         <div class="album-cover-title">${album.titleJa || album.title}</div>
         ${enLine}
         <div class="album-cover-date">${album.releaseDate}</div>
       </div>
     `;
-    card.innerHTML = coverInner;
+    const imgArea = album.artwork
+      ? `<img src="${album.artwork}" alt="${album.titleJa || album.title}" class="album-card-img">`
+      : `<div class="album-cover" style="background-color:${album.coverColor};">
+           <div class="album-cover-grid"></div>
+         </div>`;
+    card.innerHTML = header + imgArea;
     albumGrid.appendChild(card);
   });
 
