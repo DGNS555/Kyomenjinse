@@ -151,7 +151,7 @@ And I’ll be waiting for that day to come.`,
     tags: ["Rock", "社会", "風刺"],
     color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/01.jpg"）
-    previewAudio: "audio/鏡面人世 - 銭の花道.mp3",        // 試聴音源パス（例: "audio/01-preview.mp3"）
+    previewAudio: "audio/KJS-001.mp3",        // 試聴音源パス（例: "audio/01-preview.mp3"）
     bandcamp: "https://kyomenjinse.bandcamp.com",            // BandcampのURL
     base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   },
