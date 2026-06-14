@@ -537,9 +537,9 @@
   // ヒーロー文字を動的に入れる
   document.getElementById('hero-catch').textContent = SITE_INFO.catchphrase;
 
-  // 楽曲グリッド（最新6曲）
+  // 楽曲グリッド（最新5曲）
   const grid = document.getElementById('songs-grid');
-  SONGS.slice(0, 6).forEach(song => {
+  SONGS.slice(0, 5).forEach(song => {
     grid.appendChild(createSongCard(song, true));
   });
 
