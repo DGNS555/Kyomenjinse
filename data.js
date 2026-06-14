@@ -1073,13 +1073,13 @@ const ALBUMS = [
     titleJa: "人情景",
     titleEn: "Life in Ukiyo",           // 英語タイトルなし → 非表示
     subtitle: "2nd Album",
-    releaseDate: "2026.06.10",
+    releaseDate: "Coming soon",
     artwork: "images/albums/album-02.png",             // アルバムアートワーク（例: "images/albums/album-02.jpg"）
     coverColor: "#261408",
     coverAccent: "#e0c97a",
-    description: "セカンドアルバム。",
+    description: "セカンドアルバム。全7曲収録。",
     trackCount: 7,
-    concept: "乾いているから、火がつく。"
+    concept: "笑えど泣けど生き暮らす。長屋、人の世、此処にあり。"
   }
 ];
 
