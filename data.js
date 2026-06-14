@@ -1049,6 +1049,139 @@ It weaves together the pathways of dreams.
     previewAudio: "audio/KJS-008.mp3",        // 試聴音源パス（例: "audio/06-preview.mp3"）
     bandcamp: "https://kyomenjinse.bandcamp.com/album/hidden-songs-of-ukiyo",            // BandcampのURL
     base: "https://kyoumenjinse.base.shop"                 // BASEのURL
+  },
+      {
+    id: "00",
+    title: "曲名",
+    titleEn: "英名",
+    reading: "ひらがな",
+    album: "album-00",
+    track: 0,
+    releaseDate: "リリース日",
+    youtubeId: "",
+    description: "説明",
+    lyricsJa: `日本語歌詞`,
+    lyricsEn: `英語歌詞`,
+    tags: ["", "", ""],
+    color: "",
+    artwork: "",                 // 曲ジャケット画像（例: "images/songs/06.jpg"）
+    previewAudio: "audio/KJS-000.mp3",        // 試聴音源パス（例: "audio/06-preview.mp3"）
+    bandcamp: "https://kyomenjinse.bandcamp.com/album/hidden-songs-of-ukiyo",            // BandcampのURL
+    base: "https://kyoumenjinse.base.shop"                 // BASEのURL
+  },
+      {
+    id: "00",
+    title: "曲名",
+    titleEn: "英名",
+    reading: "ひらがな",
+    album: "album-00",
+    track: 0,
+    releaseDate: "リリース日",
+    youtubeId: "",
+    description: "説明",
+    lyricsJa: `日本語歌詞`,
+    lyricsEn: `英語歌詞`,
+    tags: ["", "", ""],
+    color: "",
+    artwork: "",                 // 曲ジャケット画像（例: "images/songs/06.jpg"）
+    previewAudio: "audio/KJS-000.mp3",        // 試聴音源パス（例: "audio/06-preview.mp3"）
+    bandcamp: "https://kyomenjinse.bandcamp.com/album/hidden-songs-of-ukiyo",            // BandcampのURL
+    base: "https://kyoumenjinse.base.shop"                 // BASEのURL
+  },
+      {
+    id: "00",
+    title: "曲名",
+    titleEn: "英名",
+    reading: "ひらがな",
+    album: "album-00",
+    track: 0,
+    releaseDate: "リリース日",
+    youtubeId: "",
+    description: "説明",
+    lyricsJa: `日本語歌詞`,
+    lyricsEn: `英語歌詞`,
+    tags: ["", "", ""],
+    color: "",
+    artwork: "",                 // 曲ジャケット画像（例: "images/songs/06.jpg"）
+    previewAudio: "audio/KJS-000.mp3",        // 試聴音源パス（例: "audio/06-preview.mp3"）
+    bandcamp: "https://kyomenjinse.bandcamp.com/album/hidden-songs-of-ukiyo",            // BandcampのURL
+    base: "https://kyoumenjinse.base.shop"                 // BASEのURL
+  },
+      {
+    id: "00",
+    title: "曲名",
+    titleEn: "英名",
+    reading: "ひらがな",
+    album: "album-00",
+    track: 0,
+    releaseDate: "リリース日",
+    youtubeId: "",
+    description: "説明",
+    lyricsJa: `日本語歌詞`,
+    lyricsEn: `英語歌詞`,
+    tags: ["", "", ""],
+    color: "",
+    artwork: "",                 // 曲ジャケット画像（例: "images/songs/06.jpg"）
+    previewAudio: "audio/KJS-000.mp3",        // 試聴音源パス（例: "audio/06-preview.mp3"）
+    bandcamp: "https://kyomenjinse.bandcamp.com/album/hidden-songs-of-ukiyo",            // BandcampのURL
+    base: "https://kyoumenjinse.base.shop"                 // BASEのURL
+  },
+      {
+    id: "00",
+    title: "曲名",
+    titleEn: "英名",
+    reading: "ひらがな",
+    album: "album-00",
+    track: 0,
+    releaseDate: "リリース日",
+    youtubeId: "",
+    description: "説明",
+    lyricsJa: `日本語歌詞`,
+    lyricsEn: `英語歌詞`,
+    tags: ["", "", ""],
+    color: "",
+    artwork: "",                 // 曲ジャケット画像（例: "images/songs/06.jpg"）
+    previewAudio: "audio/KJS-000.mp3",        // 試聴音源パス（例: "audio/06-preview.mp3"）
+    bandcamp: "https://kyomenjinse.bandcamp.com/album/hidden-songs-of-ukiyo",            // BandcampのURL
+    base: "https://kyoumenjinse.base.shop"                 // BASEのURL
+  },
+      {
+    id: "00",
+    title: "曲名",
+    titleEn: "英名",
+    reading: "ひらがな",
+    album: "album-00",
+    track: 0,
+    releaseDate: "リリース日",
+    youtubeId: "",
+    description: "説明",
+    lyricsJa: `日本語歌詞`,
+    lyricsEn: `英語歌詞`,
+    tags: ["", "", ""],
+    color: "",
+    artwork: "",                 // 曲ジャケット画像（例: "images/songs/06.jpg"）
+    previewAudio: "audio/KJS-000.mp3",        // 試聴音源パス（例: "audio/06-preview.mp3"）
+    bandcamp: "https://kyomenjinse.bandcamp.com/album/hidden-songs-of-ukiyo",            // BandcampのURL
+    base: "https://kyoumenjinse.base.shop"                 // BASEのURL
+  },
+      {
+    id: "00",
+    title: "曲名",
+    titleEn: "英名",
+    reading: "ひらがな",
+    album: "album-00",
+    track: 0,
+    releaseDate: "リリース日",
+    youtubeId: "",
+    description: "説明",
+    lyricsJa: `日本語歌詞`,
+    lyricsEn: `英語歌詞`,
+    tags: ["", "", ""],
+    color: "",
+    artwork: "",                 // 曲ジャケット画像（例: "images/songs/06.jpg"）
+    previewAudio: "audio/KJS-000.mp3",        // 試聴音源パス（例: "audio/06-preview.mp3"）
+    bandcamp: "https://kyomenjinse.bandcamp.com/album/hidden-songs-of-ukiyo",            // BandcampのURL
+    base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   }
 ];
 
