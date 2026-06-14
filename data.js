@@ -297,7 +297,7 @@ That’s the style the wise ones know.
     tags: ["Hiphop", "内面", "鬼"],
     color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/02.jpg"）
-    previewAudio: "audio/鏡面人世 - 鬼は内.mp3",        // 試聴音源パス（例: "audio/02-preview.mp3"）
+    previewAudio: "audio/KJS-002.mp3",        // 試聴音源パス（例: "audio/02-preview.mp3"）
     bandcamp: "https://kyomenjinse.bandcamp.com",            // BandcampのURL
     base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   },
@@ -442,7 +442,7 @@ Me… you… or perhaps someone else?`,
     tags: ["Hiphop", "欲", "拝金"],
     color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/03.jpg"）
-    previewAudio: "audio/鏡面人世 - 欲世.mp3",        // 試聴音源パス（例: "audio/03-preview.mp3"）
+    previewAudio: "audio/KJS-003.mp3",        // 試聴音源パス（例: "audio/03-preview.mp3"）
     bandcamp: "https://kyomenjinse.bandcamp.com",            // BandcampのURL
     base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   },
@@ -561,7 +561,7 @@ which one of us is real?
     tags: ["影", "夕焼け", "失踪"],
     color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/04.jpg"）
-    previewAudio: "",        // 試聴音源パス（例: "audio/04-preview.mp3"）
+    previewAudio: "audio/KJS-004.mp3",        // 試聴音源パス（例: "audio/04-preview.mp3"）
     bandcamp: "https://kyomenjinse.bandcamp.com/album/hidden-songs-of-ukiyo",            // BandcampのURL
     base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   },
@@ -718,7 +718,7 @@ Close your eyes—And somehow it grows clearer.
     tags: ["情報", "嘘", "真実"],
     color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/05.jpg"）
-    previewAudio: "",        // 試聴音源パス（例: "audio/05-preview.mp3"）
+    previewAudio: "audio/KJS-005.mp3",        // 試聴音源パス（例: "audio/05-preview.mp3"）
     bandcamp: "https://kyomenjinse.bandcamp.com/album/hidden-songs-of-ukiyo",            // BandcampのURL
     base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   },
@@ -847,7 +847,7 @@ Its name is Hiji-Chomoku
     tags: ["陰謀", "諜報", "裏社会"],
     color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/06.jpg"）
-    previewAudio: "",        // 試聴音源パス（例: "audio/06-preview.mp3"）
+    previewAudio: "audio/KJS-006.mp3",        // 試聴音源パス（例: "audio/06-preview.mp3"）
     bandcamp: "https://kyomenjinse.bandcamp.com/album/hidden-songs-of-ukiyo",            // BandcampのURL
     base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   },
@@ -963,7 +963,7 @@ Another spark is quietly dropped
     tags: ["炎上", "火消し", "騒動"],
     color: "",
     artwork: "",
-    previewAudio: "",
+    previewAudio: "audio/KJS-007.mp3",
     bandcamp: "https://kyomenjinse.bandcamp.com/album/hidden-songs-of-ukiyo",
     base: "https://kyoumenjinse.base.shop",
   },
@@ -1046,7 +1046,7 @@ It weaves together the pathways of dreams.
     tags: ["光", "ネット", "繋がり"],
     color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/06.jpg"）
-    previewAudio: "",        // 試聴音源パス（例: "audio/06-preview.mp3"）
+    previewAudio: "audio/KJS-008.mp3",        // 試聴音源パス（例: "audio/06-preview.mp3"）
     bandcamp: "https://kyomenjinse.bandcamp.com/album/hidden-songs-of-ukiyo",            // BandcampのURL
     base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   }
