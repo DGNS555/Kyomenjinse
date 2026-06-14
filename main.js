@@ -114,7 +114,7 @@ function renderFooter() {
       <a href="songs.html">Songs</a>
       <a href="albums.html">Albums</a>
     </nav>
-    <p class="footer-copy">© 2024 ${SITE_INFO.artistName}. All rights reserved.</p>
+    <p class="footer-copy">© 2026 ${SITE_INFO.artistName}. All rights reserved.</p>
   `;
 }
 
