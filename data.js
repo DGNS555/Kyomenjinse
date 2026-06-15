@@ -1051,132 +1051,132 @@ It weaves together the pathways of dreams.
     base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   },
       {
-    id: "00",
-    title: "曲名",
-    titleEn: "英名",
-    reading: "ひらがな",
-    album: "album-00",
-    track: 0,
-    releaseDate: "リリース日",
+    id: "09",
+    title: "日々上々",
+    titleEn: "Days Getting Better",
+    reading: "ひびじょうじょう",
+    album: "album-02",
+    track: 1,
+    releaseDate: "2026.06.25",
     youtubeId: "",
     description: "説明",
     lyricsJa: `日本語歌詞`,
     lyricsEn: `英語歌詞`,
-    tags: ["", "", ""],
+    tags: ["暮らし", "物価高", "モチベーション"],
     color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/06.jpg"）
-    previewAudio: "audio/KJS-000.mp3",        // 試聴音源パス（例: "audio/06-preview.mp3"）
+    previewAudio: "audio/KJS-009.mp3",        // 試聴音源パス（例: "audio/06-preview.mp3"）
     bandcamp: "https://kyomenjinse.bandcamp.com/album/hidden-songs-of-ukiyo",            // BandcampのURL
     base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   },
       {
-    id: "00",
-    title: "曲名",
-    titleEn: "英名",
-    reading: "ひらがな",
-    album: "album-00",
-    track: 0,
-    releaseDate: "リリース日",
+    id: "10",
+    title: "持ちつ持たれつ",
+    titleEn: "Holding Each Other Up",
+    reading: "もちつもたれつ",
+    album: "album-02",
+    track: 2,
+    releaseDate: "coming soon",
     youtubeId: "",
     description: "説明",
     lyricsJa: `日本語歌詞`,
     lyricsEn: `英語歌詞`,
-    tags: ["", "", ""],
+    tags: ["夫婦", "支え合い", "Reggae"],
     color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/06.jpg"）
-    previewAudio: "audio/KJS-000.mp3",        // 試聴音源パス（例: "audio/06-preview.mp3"）
+    previewAudio: "audio/KJS-010.mp3",        // 試聴音源パス（例: "audio/06-preview.mp3"）
     bandcamp: "https://kyomenjinse.bandcamp.com/album/hidden-songs-of-ukiyo",            // BandcampのURL
     base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   },
       {
-    id: "00",
-    title: "曲名",
-    titleEn: "英名",
-    reading: "ひらがな",
-    album: "album-00",
-    track: 0,
-    releaseDate: "リリース日",
+    id: "11",
+    title: "働々節",
+    titleEn: "Sweat, Grit & Pride",
+    reading: "どうどうぶし",
+    album: "album-02",
+    track: 3,
+    releaseDate: "coming soon",
     youtubeId: "",
     description: "説明",
     lyricsJa: `日本語歌詞`,
     lyricsEn: `英語歌詞`,
-    tags: ["", "", ""],
+    tags: ["労働", "職人", "誇り"],
     color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/06.jpg"）
-    previewAudio: "audio/KJS-000.mp3",        // 試聴音源パス（例: "audio/06-preview.mp3"）
+    previewAudio: "audio/KJS-011.mp3",        // 試聴音源パス（例: "audio/06-preview.mp3"）
     bandcamp: "https://kyomenjinse.bandcamp.com/album/hidden-songs-of-ukiyo",            // BandcampのURL
     base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   },
       {
-    id: "00",
-    title: "曲名",
-    titleEn: "英名",
-    reading: "ひらがな",
-    album: "album-00",
-    track: 0,
-    releaseDate: "リリース日",
+    id: "12",
+    title: "子守下手",
+    titleEn: "A Clumsy Lullaby",
+    reading: "こもりべた",
+    album: "album-02",
+    track: 4,
+    releaseDate: "coming soon",
     youtubeId: "",
     description: "説明",
     lyricsJa: `日本語歌詞`,
     lyricsEn: `英語歌詞`,
-    tags: ["", "", ""],
+    tags: ["子守", "不器用", "親心"],
     color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/06.jpg"）
-    previewAudio: "audio/KJS-000.mp3",        // 試聴音源パス（例: "audio/06-preview.mp3"）
+    previewAudio: "audio/KJS-012.mp3",        // 試聴音源パス（例: "audio/06-preview.mp3"）
     bandcamp: "https://kyomenjinse.bandcamp.com/album/hidden-songs-of-ukiyo",            // BandcampのURL
     base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   },
       {
-    id: "00",
-    title: "曲名",
-    titleEn: "英名",
-    reading: "ひらがな",
-    album: "album-00",
-    track: 0,
-    releaseDate: "リリース日",
+    id: "13",
+    title: "藍傘",
+    titleEn: "the Indigo Umbrella",
+    reading: "あいがさ",
+    album: "album-02",
+    track: 5,
+    releaseDate: "coming soon",
     youtubeId: "",
     description: "説明",
     lyricsJa: `日本語歌詞`,
     lyricsEn: `英語歌詞`,
-    tags: ["", "", ""],
+    tags: ["傘", "雨", "記憶"],
     color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/06.jpg"）
-    previewAudio: "audio/KJS-000.mp3",        // 試聴音源パス（例: "audio/06-preview.mp3"）
+    previewAudio: "audio/KJS-013.mp3",        // 試聴音源パス（例: "audio/06-preview.mp3"）
     bandcamp: "https://kyomenjinse.bandcamp.com/album/hidden-songs-of-ukiyo",            // BandcampのURL
     base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   },
       {
-    id: "00",
-    title: "曲名",
-    titleEn: "英名",
-    reading: "ひらがな",
-    album: "album-00",
-    track: 0,
-    releaseDate: "リリース日",
+    id: "14",
+    title: "渡し舟",
+    titleEn: "The Ferry Beyond",
+    reading: "わたしぶね",
+    album: "album-02",
+    track: 6,
+    releaseDate: "coming soon",
     youtubeId: "",
     description: "説明",
     lyricsJa: `日本語歌詞`,
     lyricsEn: `英語歌詞`,
-    tags: ["", "", ""],
+    tags: ["別れ", "舟", "三途川"],
     color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/06.jpg"）
-    previewAudio: "audio/KJS-000.mp3",        // 試聴音源パス（例: "audio/06-preview.mp3"）
+    previewAudio: "audio/KJS-014.mp3",        // 試聴音源パス（例: "audio/06-preview.mp3"）
     bandcamp: "https://kyomenjinse.bandcamp.com/album/hidden-songs-of-ukiyo",            // BandcampのURL
     base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   },
       {
-    id: "00",
-    title: "曲名",
-    titleEn: "英名",
-    reading: "ひらがな",
-    album: "album-00",
-    track: 0,
-    releaseDate: "リリース日",
+    id: "15",
+    title: "恩毎上位,
+    titleEn: "On My Way",
+    reading: "おんまいうぇい",
+    album: "album-02",
+    track: 7,
+    releaseDate: "coming soon",
     youtubeId: "",
     description: "説明",
     lyricsJa: `日本語歌詞`,
     lyricsEn: `英語歌詞`,
-    tags: ["", "", ""],
+    tags: ["道", "人生", "決意"],
     color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/06.jpg"）
     previewAudio: "audio/KJS-000.mp3",        // 試聴音源パス（例: "audio/06-preview.mp3"）
