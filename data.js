@@ -1179,7 +1179,7 @@ It weaves together the pathways of dreams.
     tags: ["道", "人生", "決意"],
     color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/06.jpg"）
-    previewAudio: "audio/KJS-000.mp3",        // 試聴音源パス（例: "audio/06-preview.mp3"）
+    previewAudio: "audio/KJS-015.mp3",        // 試聴音源パス（例: "audio/06-preview.mp3"）
     bandcamp: "https://kyomenjinse.bandcamp.com/album/hidden-songs-of-ukiyo",            // BandcampのURL
     base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   }
