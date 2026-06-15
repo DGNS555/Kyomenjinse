@@ -1166,7 +1166,7 @@ It weaves together the pathways of dreams.
   },
       {
     id: "15",
-    title: "恩毎上位,
+    title: "恩毎上位",
     titleEn: "On My Way",
     reading: "おんまいうぇい",
     album: "album-02",
