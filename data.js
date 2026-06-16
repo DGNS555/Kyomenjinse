@@ -853,7 +853,7 @@ Its name is Hiji-Chomoku
   },
   {
     id: "07",
-    title: "お江戸大炎上",
+    title: "お江戸|大炎上",
     titleEn: "Edo is Burning",
     reading: "おえどだいえんじょう",
     album: "album-01",
