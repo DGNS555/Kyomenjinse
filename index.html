@@ -547,9 +547,24 @@
   // ヒーロー文字を動的に入れる
   document.getElementById('hero-catch').textContent = SITE_INFO.catchphrase;
 
-  // 楽曲グリッド（最新5曲）
+// 楽曲グリッド（リリース日が新しい順に5曲）
   const grid = document.getElementById('songs-grid');
-  SONGS.slice(0, 5).forEach(song => {
+
+// "2024.03.21" 形式の日付をDateに変換。
+  // "coming soon"等パース不可は「未来最優先」扱いで最上位に表示
+  function parseReleaseDate(str) {
+    if (!str) return new Date(0);
+    const parts = str.split('.').map(n => parseInt(n, 10));
+    if (parts.length < 2 || parts.some(isNaN)) return new Date(8640000000000000); // 最大未来日付
+    const [y, m, d] = parts;
+    return new Date(y, (m || 1) - 1, d || 1);
+  }
+
+  const sortedSongs = [...SONGS].sort(
+    (a, b) => parseReleaseDate(b.releaseDate) - parseReleaseDate(a.releaseDate)
+  );
+
+  sortedSongs.slice(0, 6).forEach(song => {
     grid.appendChild(createSongCard(song, true));
   });
 
