@@ -1244,10 +1244,10 @@ const SITE_INFO = {
  */
 const NEWS = [
   // ↓ ここに追記（新しいものを上に）
-  // {
-  //   date: "coming soon",
-  //   tag:  "RELEASE",
-  //   text: "2nd Album「人情景 - Life in Ukiyo」リリース予定！",
-  //   url:  "https://kyomenjinse.bandcamp.com"
-  // },
+  {
+  date: "coming soon",
+  tag:  "RELEASE",
+  text: "2nd Album「人情景 - Life in Ukiyo」リリース予定！",
+  url:  "https://kyomenjinse.bandcamp.com"
+  },
 ];
