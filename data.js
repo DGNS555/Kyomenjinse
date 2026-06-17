@@ -1230,3 +1230,24 @@ const SITE_INFO = {
   tiktokUrl:    "https://www.tiktok.com/@kyomenjinse",   // 例: "https://www.tiktok.com/@xxxxxx"
   instagramUrl: "https://www.instagram.com/kyomenjinse",   // 例: "https://www.instagram.com/xxxxxx"
 };
+
+/**
+ * ニュース一覧
+ * =====================================================
+ * 新しいニュースを追加する場合は配列の先頭に追記してください（新しい順）。
+ *
+ * 各項目：
+ * - date : 日付（例: "2026.06.10"）
+ * - tag  : カテゴリ（例: "RELEASE" "LIVE" "INFO" "NEW" "UPDATE"）
+ * - text : 本文
+ * - url  : リンク先（任意。不要なら行ごと削除してOK）
+ */
+const NEWS = [
+  // ↓ ここに追記（新しいものを上に）
+  // {
+  //   date: "coming soon",
+  //   tag:  "RELEASE",
+  //   text: "2nd Album「人情景 - Life in Ukiyo」リリース予定！",
+  //   url:  "https://kyomenjinse.bandcamp.com"
+  // },
+];
