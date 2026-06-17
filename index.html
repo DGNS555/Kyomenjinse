@@ -137,37 +137,40 @@
       animation: hero-in 1.2s 0.6s var(--ease-out) both;
     }
 
-    /* スクロールインジケーター */
-    .scroll-indicator {
-      position: absolute;
-      bottom: 2.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      z-index: 1;
-      animation: fade-in-scroll 2s 1.5s both;
+/* ── ニュース欄 ─────────────────────── */
+    .news-section { padding: var(--gap-xl) 0 0; }
+    .news-list {
+      display: flex; flex-direction: column;
+      border: 1px solid rgba(201,168,76,0.15);
+      background: rgba(37,26,12,0.3);
     }
-    @keyframes fade-in-scroll {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .news-item {
+      display: flex; gap: 1rem;
+      padding: 1rem 1.4rem;
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      transition: background 0.25s;
+      text-decoration: none; color: inherit; align-items: baseline;
     }
-    .scroll-indicator span {
-      font-size: 0.6rem;
-      letter-spacing: 0.3em;
-      color: var(--usuzumi);
+    .news-item:last-child { border-bottom: none; }
+    .news-item:hover { background: rgba(61,42,16,0.5); }
+    .news-item.no-link { cursor: default; }
+    .news-item.no-link:hover { background: transparent; }
+    .news-date {
+      font-size: 0.68rem; letter-spacing: 0.12em;
+      color: var(--kin); white-space: nowrap; flex-shrink: 0; min-width: 5.5rem;
     }
-    .scroll-line {
-      width: 1px;
-      height: 3rem;
-      background: linear-gradient(to bottom, var(--kin), transparent);
-      animation: scroll-line 2s ease-in-out infinite;
+    .news-tag {
+      font-size: 0.58rem; letter-spacing: 0.12em;
+      padding: 1px 7px; border: 1px solid rgba(201,168,76,0.35);
+      color: var(--usuzumi); white-space: nowrap; flex-shrink: 0;
     }
-    @keyframes scroll-line {
-      0%, 100% { opacity: 0.3; transform: scaleY(1); }
-      50% { opacity: 1; transform: scaleY(0.6); }
+    .news-text {
+      font-size: 0.82rem; letter-spacing: 0.06em;
+      color: var(--washi); line-height: 1.6;
+    }
+    .news-empty {
+      padding: 2rem; text-align: center;
+      font-size: 0.78rem; letter-spacing: 0.15em; color: var(--usuzumi);
     }
 
     /* ── 最新楽曲 ────────────────────── */
@@ -473,12 +476,19 @@
     </div>
   </div>
 
-  <div class="scroll-indicator">
-    <span>SCROLL</span>
-    <div class="scroll-line"></div>
-  </div>
+</div>
 </section>
 
+<!-- ニュース -->
+<section class="news-section">
+  <div class="container">
+    <div class="section-divider fade-in">
+      <span class="section-label">News</span>
+    </div>
+    <h2 class="section-title fade-in">ニュース</h2>
+    <div class="news-list fade-in" id="news-list"></div>
+  </div>
+</section>
 <!-- 最新楽曲 -->
 <section class="latest-section">
   <div class="container">
@@ -568,6 +578,25 @@
     albumGrid.appendChild(card);
   });
 
+  // ニュース一覧生成
+  const newsList = document.getElementById('news-list');
+  const news = typeof NEWS !== 'undefined' ? NEWS : [];
+  if (news.length === 0) {
+    newsList.innerHTML = '<p class="news-empty">ニュースはまだありません。</p>';
+  } else {
+    news.slice(0, 8).forEach(item => {
+      const el = item.url ? document.createElement('a') : document.createElement('div');
+      el.className = 'news-item' + (item.url ? '' : ' no-link');
+      if (item.url) { el.href = item.url; el.target = '_blank'; el.rel = 'noopener'; }
+      el.innerHTML = `
+        <span class="news-date">${item.date}</span>
+        <span class="news-tag">${item.tag || 'INFO'}</span>
+        <span class="news-text">${item.text}</span>
+      `;
+      newsList.appendChild(el);
+    });
+                 }
+  
   // フェードイン再起動
   setTimeout(initFadeIn, 100);
 
