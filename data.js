@@ -1247,7 +1247,7 @@ const NEWS = [
   {
   date: "coming soon",
   tag:  "RELEASE",
-  text: "2nd Album「人情景 - Life in Ukiyo」リリース予定！",
+  text: "2nd Album「人情景 - Life in Ukiyo」リリース決定！",
   url:  "https://kyomenjinse.bandcamp.com"
   },
 ];
