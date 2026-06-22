@@ -1248,18 +1248,18 @@ const NEWS = [
   date: "coming soon",
   tag:  "Release",
   text: "2nd Album「人情景 - Life in Ukiyo」リリース販売決定！",
-  url:  "https://kyomenjinse.bandcamp.com"
+  url:  "https://kyomenjinse.bandcamp.com/album/life-in-ukiyo"
   },
   {
   date: "coming soon",
   tag:  "Streaming",
   text: "Single「子守下手 - A Clumsy Lullaby」ストリーミング配信決定！",
-  url:  "https://kyomenjinse.bandcamp.com"
+  url:  "https://kyomenjinse.bandcamp.com/album/life-in-ukiyo"
   },
   {
   date: "2026.06.25",
   tag:  "Streaming",
   text: "Single「日々上々 - Days Getting Better」ストリーミング配信開始！",
-  url:  "https://kyomenjinse.bandcamp.com"
+  url:  "https://kyomenjinse.bandcamp.com/album/life-in-ukiyo"
   },
 ];
