@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://kyomenjinse.com/</loc>
     <lastmod>2026-06-29</lastmod>
   </url>
+
+  <url>
+    <loc>https://kyomenjinse.com/songs.html</loc>
+    <lastmod>2026-06-29</lastmod>
+  </url>
+
+  <url>
+    <loc>https://kyomenjinse.com/albums.html</loc>
+    <lastmod>2026-06-29</lastmod>
+  </url>
+
 </urlset>
