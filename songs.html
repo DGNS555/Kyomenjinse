@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>楽曲一覧 — 鏡面人世</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .songs-page { padding-bottom: var(--gap-xl); }
+
+    /* フィルター */
+    .filter-bar {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .filter-btn {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      padding: 0.5rem 1.2rem;
+      border: 1px solid rgba(201,168,76,0.18);
+      color: var(--usuzumi);
+      background: transparent;
+      transition: all 0.3s var(--ease);
+      cursor: pointer;
+    }
+    .filter-btn:hover,
+    .filter-btn.active {
+      border-color: var(--kin);
+      color: var(--shiro);
+      background: rgba(201,168,76,0.18);
+    }
+
+    /* 楽曲グリッド（トップページと同じスタイル） */
+    .songs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1px;
+      background: rgba(201,168,76,0.10);
+      border: 1px solid rgba(201,168,76,0.10);
+    }
+
+    .songs-grid .song-card {
+      background: var(--cha-deep);
+      border: none;
+    }
+    .songs-grid .song-card:hover {
+      background: rgba(61,42,16,0.7);
+      transform: none;
+    }
+
+    /* ============================================================
+       songs.html 専用の追加スタイル
+       理由：カードに「ジャケット画像」「英語サブタイトル」「リリース年」を
+       表示する要件のため、新規クラスのみ追加している。
+       style.css の既存ルール（.song-card, .song-card-track, .song-card-title,
+       .song-card-reading, .song-card-desc, .song-card-tags 等）は
+       一切変更していない。トップページ・楽曲詳細ページの見た目には影響しない。
+       ============================================================ */
+    .song-card-img {
+      display: block;
+      width: calc(100% + 3rem);     /* カードのpadding(1.5rem)分だけ外側へ広げて全幅表示 */
+      margin: -1.5rem -1.5rem 1rem -1.5rem;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      border-bottom: 1px solid rgba(201,168,76,0.18);
+    }
+    .song-card-title-en {
+      font-family: var(--font-serif);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      color: rgba(245,237,216,0.5);
+      font-style: italic;
+      margin-bottom: 0.3rem;
+    }
+    .song-card-year {
+      color: var(--kin);
+      opacity: 0.85;
+    }
+  </style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <a href="index.html" class="nav-logo">鏡面人世</a>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="songs.html">Songs</a>
+    <a href="albums.html">Albums</a>
+  </nav>
+  <button class="nav-burger" id="burger" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="nav-mobile" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="songs.html">Songs</a>
+  <a href="albums.html">Albums</a>
+</nav>
+
+<div class="page-header">
+  <p class="page-header-en">SONGS</p>
+  <h1 class="page-header-title">楽曲一覧</h1>
+  <p class="page-header-desc">鏡に映る景色を、曲として。</p>
+</div>
+
+<main class="songs-page">
+  <div class="container">
+    <!-- フィルター -->
+    <div class="filter-bar fade-in" id="filter-bar">
+      <button class="filter-btn active" data-album="all">すべて</button>
+    </div>
+
+    <!-- 件数 -->
+    <p class="songs-count fade-in" id="songs-count"></p>
+
+    <!-- 楽曲グリッド -->
+    <div class="songs-grid fade-in" id="songs-list"></div>
+  </div>
+</main>
+
+<footer class="footer"></footer>
+
+<script src="data.js"></script>
+<script src="main.js"></script>
+<script>
+  let currentAlbum = 'all';
+
+  // フィルターボタン生成
+  const filterBar = document.getElementById('filter-bar');
+  ALBUMS.forEach(album => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn';
+    btn.dataset.album = album.id;
+    btn.textContent = album.title;
+    filterBar.appendChild(btn);
+  });
+
+  // フィルター切り替え
+  filterBar.addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    currentAlbum = btn.dataset.album;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderList();
+  });
+
+  // リスト描画
+  function renderList() {
+    const list = document.getElementById('songs-list');
+    const count = document.getElementById('songs-count');
+    list.innerHTML = '';
+
+    const filtered = currentAlbum === 'all'
+      ? SONGS
+      : SONGS.filter(s => s.album === currentAlbum);
+
+    count.textContent = `${filtered.length} 曲`;
+
+    if (filtered.length === 0) {
+      list.innerHTML = '<p style="text-align:center;padding:5rem 2rem;color:var(--usuzumi);font-size:0.85rem;letter-spacing:0.15em;">楽曲が見つかりません。</p>';
+      return;
+    }
+
+    // data.js の SONGS 配列から直接カードを生成（HTMLへの直書きは一切なし）。
+    // 新しい曲を data.js に追記するだけで、ここが自動的に反映される。
+    filtered.forEach(song => {
+      list.appendChild(buildSongCardEl(song));
+    });
+
+    initFadeIn();
+  }
+
+  /**
+   * 楽曲データから1枚のカード要素を生成する（songs.html 専用）。
+   *
+   * main.js の createSongCard() は index.html（最新曲グリッド）と
+   * song.html（関連曲グリッド）でも共用されているため、ここで仕様を
+   * 拡張すると他ページの見た目まで変わってしまう。
+   * そのため songs.html だけで完結するこの専用関数を用意し、
+   * 既存ページのデザイン・挙動には一切影響を与えないようにしている。
+   *
+   * 表示項目：ジャケット画像／タイトル／英語サブタイトル／アルバム名／
+   * リリース年／タグ（複数可・未設定なら非表示）／説明文（短縮）
+   */
+  function buildSongCardEl(song) {
+    const albumData = ALBUMS.find(a => a.id === song.album);
+
+    const card = document.createElement('a');
+    card.href = `song.html?id=${song.id}`; // クリック時の遷移先は従来どおり song.html?id=曲ID
+    card.className = 'song-card fade-in';
+
+    // ジャケット画像：曲固有 → なければアルバム流用 → どちらも無ければ非表示
+    // （song.html のアートワーク表示と同じ優先順位に揃えている）
+    const artworkSrc = song.artwork || (albumData && albumData.artwork) || '';
+    const imgHtml = artworkSrc
+      ? `<img class="song-card-img" src="${artworkSrc}" alt="${song.title || ''}" loading="lazy">`
+      : '';
+
+    // 英語サブタイトル：未設定なら要素ごと出力しない
+    const titleEnHtml = song.titleEn
+      ? `<div class="song-card-title-en">${song.titleEn}</div>`
+      : '';
+
+    // リリース年："2024.03.21" → "2024"。"Coming soon" 等パース不可の場合は年表示を省略
+    const year = extractReleaseYear(song.releaseDate);
+    const yearHtml = year ? ` <span class="song-card-year">／ ${year}</span>` : '';
+
+    // タグ：配列が空 or 未設定なら欄ごと出力しない（空のタグ枠を残さない）
+    const tagsHtml = Array.isArray(song.tags) && song.tags.length > 0
+      ? `<div class="song-card-tags">${song.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>`
+      : '';
+
+    const albumName = albumData ? (albumData.titleJa || albumData.title) : '';
+    const descShort = truncateText(song.description, 60); // 説明文を短縮表示
+
+    card.innerHTML = `
+      ${imgHtml}
+      <div class="song-card-track">
+        ${albumName ? albumName + ' — ' : ''}Track ${song.track ?? '-'}${yearHtml}
+      </div>
+      <div class="song-card-title">${song.title || ''}</div>
+      ${titleEnHtml}
+      <div class="song-card-reading">${song.reading || ''}</div>
+      <div class="song-card-desc">${descShort}</div>
+      ${tagsHtml}
+    `;
+
+    return card;
+  }
+
+  // "2024.03.21" のような文字列から先頭4桁の年だけを抜き出す。
+  // 数字で始まらない値（"Coming soon" 等）は空文字を返す。
+  function extractReleaseYear(dateStr) {
+    if (!dateStr) return '';
+    const matched = dateStr.match(/^(\d{4})/);
+    return matched ? matched[1] : '';
+  }
+
+  // 説明文をカード内に収まる長さへ短縮する（タグ表示崩れの原因にもなる長文を防止）。
+  function truncateText(text, maxLength) {
+    if (!text) return '';
+    return text.length > maxLength ? text.slice(0, maxLength).trim() + '…' : text;
+  }
+
+  renderList();
+</script>
+</body>
+</html>
