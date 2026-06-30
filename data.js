@@ -1061,8 +1061,98 @@ It weaves together the pathways of dreams.
     releaseDate: "2026.06.25",
     youtubeId: "",
     description: "世知辛い日々だからこそ、笑って歩けりゃ上々よ。",
-    lyricsJa: `日本語歌詞`,
-    lyricsEn: `英語歌詞`,
+    lyricsJa: `米は高ぇし 財布は軽ぇ
+風が通るぜ 懐ん中
+「昨日のツケはどうしたよ」
+「明日の俺に任せとけ」
+
+長屋の壁は 薄っぺら
+笑い声なら よく響く
+ボロでも囲めば 暖けぇな
+それがなんだか 悪くねぇ
+
+上見りゃキリねぇ この世の値
+下見りゃ似たよな 顔ばかり
+無ぇもん数えてどうすんだ
+今あるもんで 笑っとけ
+
+　無ぇけど笑う 無いなり上々
+　今日もなんとか それで行こう
+　足りねぇ分は 分け合いで
+　それでも腹は 満たされる
+
+　無ぇけど笑う 無いなり上々
+　明日のことなら 明日でいい
+　なんとかなるさのその先で
+　今日も生きてる それで上等
+
+飯はどうする あるもん食え
+昨日の残りも まだいけるって
+酒は無ぇから 水で乾杯
+笑えりゃそれで 上出来よ
+
+足りねぇ足りねぇ 言ってるが
+満ちてるもんも あるだろよ
+隣のやつと 肩並べ
+くだらん話で 夜を越え
+
+「……まぁ、それでもな」
+
+　無ぇけど笑う 無いなり上々
+　今日もなんとか それで行こう
+　足りねぇ分は 分け合いで
+　それでも心 満たされる
+
+　無ぇけど笑う 無いなり上々
+　泣いても腹は 減るだけさ
+　だから笑って 食って寝て
+　それで良いんだ それで上等`,
+    lyricsEn: `Rice keeps getting pricey, my wallet's running dry.
+The wind blows through the holes where my money should lie.
+"What about the bill from yesterday?"
+"Leave it to tomorrow's me," I say.
+
+These old apartment walls are paper thin,
+But laughter always finds its way within.
+Even this worn-out place feels warm somehow,
+And honestly, I'm good with it for now.
+
+Look up, there's no end to what you could buy.
+Look around, we're all just getting by.
+Why count the things that we don't own?
+Just laugh with what we've got at home.
+
+　We've got nothing, but we're smiling—life's still going right.
+　We'll make it through another day somehow tonight.
+　What we're missing, we can always share.
+　Somehow there's enough for everyone there.
+
+　We've got nothing, but we're smiling—life's still going right.
+　Tomorrow can just wait until tomorrow's light.
+　Beyond the words, "It'll all work out somehow,"
+　We're still alive today, and that's enough for now.
+
+"What are we eating?" "Whatever's left."
+Yesterday's leftovers still beat regret.
+No sake tonight, so we'll toast with water.
+If we can laugh, nothing could matter.
+
+Always saying, "It's never enough,"
+But haven't we already got enough?
+Stand shoulder to shoulder with your friend,
+Talking nonsense till the night's end.
+
+"...Well... even so."
+
+　We've got nothing, but we're smiling—life's still going right.
+　We'll make it through another day somehow tonight.
+　What we're missing, we can always share.
+　Still our hearts are full beyond compare.
+
+　We've got nothing, but we're smiling—life's still going right.
+　Crying only leaves you hungry through the night.
+　So laugh a little, eat, and get some sleep.
+　That's enough for us—that's all we need.`,
     tags: ["暮らし", "物価高", "モチベーション"],
     color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/06.jpg"）
