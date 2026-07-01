@@ -1779,8 +1779,94 @@ Just like you always did.
     releaseDate: "coming soon",
     youtubeId: "",
     description: "支えてくれた人々からの恩を胸に、己の道を最後まで歩き抜く覚悟を歌った和風ラップ。",
-    lyricsJa: `日本語歌詞`,
-    lyricsEn: `英語歌詞`,
+    lyricsJa: `誰かの地図じゃ辿り着けねぇ
+正しさなんて時代でブレる
+笑われた夢も荷物に背負って
+泥だらけでも足止めねぇ
+
+向かい風なら前行く証拠
+迷いも不安も連れてく道中
+上手くやれずに遠回り上等
+積み木のように積む今日も
+
+　恩毎上位
+　この足で行く最後の日まで
+　雨降りゃ濡れて風なら受けて
+　倒れりゃ立ってまた歩くだけ
+
+　恩毎上位
+　誰のためでもねぇ俺の人生
+　迷ってもいい止まらなければ
+　今日を積み重ねまた明日へ
+
+貰った情けに背中押されて
+悔し涙さえ燃料に変えて
+派手じゃなくていい誇れりゃいい
+死ぬまで自分で歩けりゃいい
+
+世間のペースに飲まれりゃ迷子
+焦りは視界を曇らす雑音
+だから今日だけちゃんと越えよう
+昨日の自分を一歩でも
+
+　恩毎上位
+　この足で行く最後の日まで
+　雨降りゃ濡れて風なら受けて
+　倒れりゃ立ってまた歩くだけ
+
+　恩毎上位
+　誰のためでもねぇ俺の人生
+　終わりの時も胸張れるよう
+　この道だけを歩いてく
+
+近道なくても俺の道
+転んだ数だけ増える意味
+最後のその時笑えりゃいい
+恩毎上位...On My Way`,
+    lyricsEn: `No one else's map can lead me there.
+What's called right changes with the times.
+Even the dreams they laughed at, I carry on my back.
+Covered in mud, I still refuse to stop.
+
+A headwind only proves I'm moving forward.
+Doubt and fear travel beside me.
+If I have to take the long way around, so be it.
+Today is another brick laid upon tomorrow.
+
+　On My Way.
+　I'll walk this road until my final day.
+　If it rains, I'll get wet. If the wind blows, I'll face it.
+　If I fall, I'll stand again and keep walking.
+
+　On My Way.
+　This is my life—no one else's.
+　It's alright to lose my way, as long as I never stop.
+　One more day built upon the last, And then another tomorrow.
+
+The kindness I've received has pushed me onward.
+Even bitter tears become my fuel.
+I don't need a flashy life—only one I can be proud of.
+As long as I can walk on my own until the end, that's enough.
+
+If I chase the world's pace, I'll only lose myself.
+Haste clouds my sight with needless noise.
+So today, I'll simply make it through today,
+Taking at least one step beyond who I was yesterday.
+
+　On My Way.
+　I'll walk this road until my final day.
+　If it rains, I'll get wet. If the wind blows, I'll face it.
+　If I fall, I'll stand again and keep walking.
+
+　On My Way.
+　This is my life—no one else's.
+　So that when my journey reaches its end, I can hold my head high,
+　Knowing I walked only my own road.
+
+Even without shortcuts, this is my path.
+Every fall gives my journey greater meaning.
+If I can smile when the end finally comes,
+Then I'll know... I'm still On My Way.`,
     tags: ["道", "人生", "覚悟"],
     color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/06.jpg"）
