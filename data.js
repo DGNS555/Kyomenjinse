@@ -1324,8 +1324,7 @@ I make my way through life's rough waters.
 The weight I carry is no small thing.
 I keep a single light close to my heart—
 The family I'm sworn to protect.
-Even if I fall face-first into the mud,
-As long as I rise again, that's enough.
+Even if I fall face-first into the mud, As long as I rise again, that's enough.
 
 　Work, and keep on working.
 　I won't sell my life cheaply.
