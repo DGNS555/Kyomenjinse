@@ -1563,8 +1563,94 @@ I don't think I ever should.
     releaseDate: "coming soon",
     youtubeId: "",
     description: "藍染めの傘が呼び覚ます、記憶の中のその情け。",
-    lyricsJa: `日本語歌詞`,
-    lyricsEn: `英語歌詞`,
+    lyricsJa: `春の雨がしとしとと
+軒に滴り道濡らす
+見かけし傘は藍の色
+遠き日のこと胸に浮く
+
+初の勤めの帰り道
+覚えぬ町に足止まり
+細かき雨粒降り出して
+空は静かに暮れかかる
+
+その折ふいに差し出され
+この手に触れしは藍の傘
+「濡れるぞ」との一言が
+今も微かに耳残る
+
+　名も顔も思い出せぬ
+　されど忘れぬ藍の色
+　春の雨に濡れし日の
+　借りし情が胸にある
+
+礼もそこそこ顔上げりゃ
+人影ひとつ見当たらぬ
+振り向く先も雨ばかり
+町はしずかに煙るだけ
+
+借りし傘持ち歩く道
+胸の内にはぬくもりが
+春の小雨はやむことなく
+一日濡らして過ぎてゆく
+
+　顔も名も思い出せぬ
+　されど忘れぬ藍の色
+　返す宛ても知らぬまま
+　借りし情が胸にある
+
+年を重ねて今至り
+霞む記憶のその中で
+顔も名も遠ざかれど
+藍の色だけ残りけり
+
+春の雨が降るたびに
+胸の奥にて揺れるもの
+返せぬままのこの情
+いつか誰かに渡せたら`,
+    lyricsEn: `A gentle spring rain falls in quiet streams,
+Dripping from the eaves and darkening the road.
+An umbrella, deep indigo in color,
+Calls back a memory from long ago.
+
+It was after my very first day at work,
+In a town I barely knew.
+A fine rain began to fall,
+As evening quietly settled over the sky.
+
+Then, without a word of warning,
+An indigo umbrella was placed into my hand.
+"You'll get soaked," was all they said.
+Even now, those words softly echo in my ears.
+
+　I can no longer remember the face,
+　Nor even the name.
+　Yet I'll never forget that shade of indigo,
+　Or the kindness I borrowed on that rainy spring day.
+
+When I looked up to offer my thanks,
+There was no one left in sight.
+Everywhere I turned, there was only rain,
+And the town fading into its quiet mist.
+
+As I walked on beneath the borrowed umbrella,
+A quiet warmth filled my heart.
+The spring rain never let up,
+Washing gently over the whole day.
+
+　The face is gone. The name is gone.
+　But the indigo remains.
+　Though I never knew where to return the umbrella,
+　The kindness I borrowed has never left my heart.
+
+The years have come and gone,
+And memory has grown faint.
+The face has faded, the name has vanished,
+Yet the color of that indigo still remains.
+
+Whenever the spring rain begins to fall,
+Something stirs deep within me.
+If only this kindness I could never repay
+Might someday be passed on to someone else.`,
     tags: ["傘", "雨", "記憶"],
     color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/06.jpg"）
