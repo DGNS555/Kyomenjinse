@@ -1668,8 +1668,101 @@ Might someday be passed on to someone else.`,
     releaseDate: "coming soon",
     youtubeId: "",
     description: "霧の向こうへ渡った友を想い、此岸に残された者の静かな誓いを綴った一曲。",
-    lyricsJa: `日本語歌詞`,
-    lyricsEn: `英語歌詞`,
+    lyricsJa: `宵の川風冷たくて
+灯火揺れて影滲む
+昨日までぁ隣にて
+馬鹿笑いをしてたのに
+
+安酒煽り朝迎え
+「また明日な」と手を振った
+その声今じゃ聞こえねぇ
+静けさだけが残りやがる
+
+霧の向こうで何してる
+相棒そっちはどうでぇ具合
+薄情者と言いてぇが
+冗談さえも出やしねぇ
+
+　渡し舟や遠ざかり
+　呼べど声ぁ届かねぇ
+　忘れやしねぇ相棒よ
+　ここで俺ぁ立ち続ける
+
+
+馬鹿みてぇに笑う奴
+腹抱えては騒いでた
+転んだってもすぐ立って
+「まだ行ける」と歯を見せる
+
+あの日の事ぁ言わねぇが
+風ばかりが冷てぇ夜
+気がつきゃおめぇ居ねぇまま
+笑い声だけ残しやがる
+
+悔しさなんざ吐かねぇが
+胸の奥で燻ってる
+それでも俺ぁ歩き出す
+おめぇみてぇに前向いて
+
+　渡し舟ぁ遠ざかり
+　呼べど声ぁ届かねぇ
+　忘れやしねぇ相棒よ
+　こっちで俺ぁ立ち続ける
+
+　渡し舟ぁ遠ざかり
+　呼べど声ぁ届かねぇ
+　忘れやしねぇ相棒よ
+　こっちで俺ぁ立ち続ける
+
+　忘れやしねぇ相棒よ
+　こっちで俺ぁ立ち続ける`,
+    lyricsEn: `The evening river breeze is cold,
+Lantern lights tremble, their shadows blurred.
+Only yesterday you were beside me,
+Laughing so hard we could barely stand.
+
+We'd drink cheap liquor until morning came,
+Then wave and say, "See you tomorrow."
+Now your voice can no longer reach me,
+Leaving only silence behind.
+
+What are you doing beyond the mist?
+My old friend... how are things over there?
+I'd like to call you a heartless fool,
+But even jokes won't come anymore.
+
+　The ferry drifts farther away,
+　No matter how I call, my voice can't reach you.
+　I'll never forget you, my friend.
+　I'll keep standing here, on this side.
+
+You were the kind who laughed without shame,
+Holding your stomach from laughing so hard.
+Even when you fell, you'd get right back up,
+Grinning, saying, "I've still got plenty left."
+
+I won't speak of that day.
+Only the cold wind remains tonight.
+Before I knew it, you were gone,
+Leaving nothing but your laughter behind.
+
+I won't speak my regrets aloud,
+Though they still smolder deep inside.
+Even so, I'll keep walking forward,
+Just like you always did.
+
+　The ferry drifts farther away,
+　No matter how I call, my voice can't reach you.
+　I'll never forget you, my friend.
+　I'll keep standing here, carrying on.
+
+　The ferry drifts farther away,
+　No matter how I call, my voice can't reach you.
+　I'll never forget you, my friend.
+　I'll keep standing here, carrying on.
+
+　I'll never forget you, my friend.
+　I'll keep standing here, carrying on.`,
     tags: ["別れ", "舟", "三途川"],
     color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/06.jpg"）
