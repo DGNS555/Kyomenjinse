@@ -1171,8 +1171,70 @@ Talking nonsense till the night's end.
     releaseDate: "coming soon",
     youtubeId: "",
     description: "持ちつ持たれつ、今日もふたりで浮世道。",
-    lyricsJa: `日本語歌詞`,
-    lyricsEn: `英語歌詞`,
+    lyricsJa: `朝はばたばた夜ぁくたくた
+言葉足らずも何時ものこと
+小さな喧嘩もたまにする
+だけど帰りゃ隣に居る
+
+　持ちつ持たれつ浮世道
+　うまく行かぬ日もあるけれど
+　あんた疲れた顔してりゃ
+　黙って茶でも淹れやしょう
+
+　持ちつ持たれつこの暮らし
+　泣いて笑って今日になる
+　派手じゃなくても悪かない
+　おめぇと居ればまぁ上々
+
+銭の工面に悩む日も
+先見えぬ夜あるけれど
+夢をこぼせば聞いてくれ
+そのひと言にゃ救われる
+
+　持ちつ持たれつ浮世道
+　転ぶ日ぁ互いに手を貸して
+　強がる背中見てるから
+　無理はするんじゃありゃせんよ
+
+　持ちつ持たれつこの日々を
+　歳を重ねて行けたなら
+　しわが増えたと笑い合う
+　そんな明日が来ることを
+
+　持ちつ持たれつ　持ちつ持たれつ
+　あんたとならば怖かない`,
+    lyricsEn: `Busy mornings, exhausted nights,
+We're never very good with words.
+Now and then, we argue over little things,
+Yet somehow, you're always there beside me when I come home.
+
+　We lean on each other—such is the way of life.
+　Some days, nothing goes as planned.
+　When I see the weariness on your face,
+　I'll quietly brew you a cup of tea.
+
+　We lean on each other in this life we share.
+　We cry, we laugh, and another day begins.
+　It may not be a glamorous life,
+　But with you beside me, it's more than enough.
+
+There are days when money keeps us awake,
+And nights when tomorrow feels out of sight.
+Whenever I let my dreams spill out,
+You listen—and your few words carry me through.
+
+　We lean on each other—such is the way of life.
+　When one of us stumbles, the other reaches out a hand.
+　I see the strength you're trying to hide,
+　So don't push yourself too hard.
+
+　We lean on each other through all our days.
+　If we can grow old together,
+　We'll laugh about the wrinkles we've earned,
+　And hope for a tomorrow just like that.
+
+　We lean on each other, always leaning on each other.
+　As long as I'm with you, there's nothing to fear.`,
     tags: ["夫婦", "支え合い", "Reggae"],
     color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/06.jpg"）
@@ -1190,8 +1252,125 @@ Talking nonsense till the night's end.
     releaseDate: "coming soon",
     youtubeId: "",
     description: "働いて、擦り減って、それでも家族の為に踏ん張る者達への讃歌。",
-    lyricsJa: `日本語歌詞`,
-    lyricsEn: `英語歌詞`,
+    lyricsJa: `朝まだ暗ぇ　うちからよ
+草鞋の紐ぁ　締め直し
+踏ん張り踏ん張り　踏みしめて
+今日も稼ぎに　向かいやす
+
+汗にまみれた　この背中
+愚痴なんざぁ　似合わねぇ
+腕と根性　叩き込み
+世間の波ゃ　渡りやす
+
+背負ったものぁ　軽くねぇ
+守る灯ひとつ　胸に抱き
+転んで泥を　喰ったとて
+また立ちゃそれで　上等よ
+
+　働き働き　働いて
+　この身を安く　売りゃしねぇ
+　家族を支える　為だから
+　弱音なんざぁ　吐いちゃいねぇ
+
+　からくり思考が　増えようと
+　見えねぇ算段　増えようと
+　最後に人の世　回すのぁ
+　汗水　根性　意地ってもん
+
+早ぇ知恵も　増えやした
+便利な世間に　なりやした
+それでも飯ぁ　湧きゃしねぇ
+手ぇ動かして　なんぼよな
+
+泥に塗れた　この指が
+明日の飯を　呼び寄せる
+誰かが楽に　笑う陰
+誰かが汗を　流してる
+
+笑われようと　構やしねぇ
+胸張る誇りぁ　捨てやしねぇ
+折れて曲がって　なお立って
+踏ん張る背中が　道を引く
+
+　家を支える　為だから
+　今日もこの足　止めやせん
+　最後に人の世　回すのぁ
+　汗水　根性　意地ってもん
+
+　どんだけ知識が　進もうと
+　どんな時代が　来ようとも
+　最後に人の世　繋ぐのぁ
+　汗水　根性　意地ってもん
+
+　働き働き　働いて
+　胸張りゃそれで　上等よ
+　家族を支える　為だから
+　この身ぁまだまだ　折れやせん
+
+　どんな絡繰　増えようと
+　時代がどっちへ　転ぼうと
+　最後に人の世　守るのぁ
+　汗水　根性　意地ってもん`,
+    lyricsEn: `Before the dawn has even broken,
+I tighten the straps on my worn work boots.
+Step by step, standing my ground,
+I head out once again to earn an honest living.
+
+This back is soaked with sweat,
+Complaints don't suit a man like me.
+With skill in my hands and grit in my heart,
+I make my way through life's rough waters.
+
+The weight I carry is no small thing.
+I keep a single light close to my heart—
+The family I'm sworn to protect.
+Even if I fall face-first into the mud,
+As long as I rise again, that's enough.
+
+　Work, and keep on working.
+　I won't sell my life cheaply.
+　Everything I do is for my family,
+　So I won't waste my breath on self-pity.
+
+　No matter how many clever machines appear,
+　Or how complicated the world becomes,
+　In the end, what keeps this world turning
+　Is sweat, determination, and unwavering pride.
+
+The world has grown wiser,
+And life has become more convenient.
+But meals don't simply appear on the table.
+Nothing happens until these hands get moving.
+
+These mud-stained hands
+Call tomorrow's meal into being.
+Behind every easy smile,
+Someone else is shedding sweat.
+
+They can laugh at me if they want.
+I'll never throw away the pride I carry.
+Bent, battered, and worn, I still stand,
+And a steadfast back carves the road ahead.
+
+　Because I'm providing for my family,
+　These feet won't stop today either.
+　In the end, what keeps this world turning
+　Is sweat, determination, and unwavering pride.
+
+　No matter how far knowledge advances,
+　No matter what age may come,
+　In the end, what holds humanity together
+　Is sweat, determination, and unwavering pride.
+
+　Work, and keep on working.
+　If I can hold my head high, that's enough.
+　Everything I do is for my family,
+　And I still have plenty of strength left in me.
+
+　No matter what new machines may come,
+　Or where the times may lead us,
+　In the end, what protects this world
+　Is sweat, determination, and unwavering pride.`,
     tags: ["労働", "職人", "誇り"],
     color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/06.jpg"）
