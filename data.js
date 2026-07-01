@@ -1687,7 +1687,6 @@ Might someday be passed on to someone else.`,
 　忘れやしねぇ相棒よ
 　ここで俺ぁ立ち続ける
 
-
 馬鹿みてぇに笑う奴
 腹抱えては騒いでた
 転んだってもすぐ立って
