@@ -1621,7 +1621,7 @@ An indigo umbrella was placed into my hand.
 "You'll get soaked," was all they said.
 Even now, those words softly echo in my ears.
 
-　I can no longer remember the face,Nor even the name.
+　I can no longer remember the face, Nor even the name.
 　Yet I'll never forget that shade of indigo,
 　The kindness I borrowed
 　On that rainy spring day remains in my heart.
