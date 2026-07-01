@@ -1388,8 +1388,164 @@ And a steadfast back carves the road ahead.
     releaseDate: "coming soon",
     youtubeId: "",
     description: "不器用な親父から「おめぇ」に贈る、江戸流子守唄。",
-    lyricsJa: `日本語歌詞`,
-    lyricsEn: `英語歌詞`,
+    lyricsJa: `長屋の隅で朝が来りゃ
+小せぇ足音パタパタと
+寝癖のまんまで駆けて来て
+「とーちゃん」なんて呼びやがる
+
+舌足らずのその声が
+胸ん中まで染みて来らぁ
+笑って転んでまた笑う
+忙しい奴だ本当によ
+
+不器用な手で抱き上げりゃ
+妙に軽くてあったけぇ
+泣くんじゃねぇやと言いながら
+こっちが先に負けちまう
+
+銭ぁねぇがようちにはなぁ
+立派なもんぁ買えねぇが
+この腕だけはいつだって
+空けといてやる覚えとき
+
+　おめぇのかたちを覚えてく
+　小せぇ手ぇから少しずつ
+　笑った顔も泣き顔も
+　この目にゃ全部焼き付ける
+
+　おめぇのかたちを覚えてく
+　昨日よりもまたデケェ気がすらぁ
+　気付けばいつか届かねぇ
+　そんな日ぃまで見ててやる
+
+よちよち歩きも板に付き
+調子に乗って転びやがる
+涙こらえて鼻垂れて
+また立ち上がるその姿
+
+誰に似たんだその意地は
+たぶん俺だと言いてぇが
+てめぇの方がよっぽどよ
+根性座っていやがるぜぃ
+
+肩車して町歩きゃ
+目ぇ丸くして空見てる
+「あれ何？」なんて聞かれても
+上手く答えりゃ出来ねぇが
+
+分かんねぇ事ぁ山程だ
+それでも一緒に覚えりゃいい
+転び方から立ち方まで
+俺もまだまだ修行中
+
+　おめぇのかたちを覚えてく
+　小せぇ背中も少しずつ
+　走る姿も怒った顔も
+　全部この胸刻み込む
+
+　おめぇのかたちを覚えてく
+　昨日よりまた強くなりゃ
+　そのうち俺の背を越して
+　遠くへ行く日も来るんだろう
+
+そのうち手も離れちまい
+置いてきぼり食らうだろ
+口も利かねぇ日も来りゃ
+それもまぁまぁ仕様がねぇ
+
+それでも今この小せぇ
+手ぇが俺を掴んでる
+この温もりを忘れねぇ
+忘れちゃならねぇ気がしてよ
+
+　おめぇのかたちを覚えてく
+　小せぇ今を忘れねぇ
+　泣き顔　笑顔もその全部
+　宝みてぇに抱えてく
+
+　おめぇのかたちを覚えてく
+　いつかこの手を離れても
+　何処に居たって忘れねぇ
+　おめぇは俺の大事だよ`,
+    lyricsEn: `Morning breaks over our little row house,
+And I hear the patter of tiny feet.
+You come running in with your bed hair still a mess,
+Calling out, "Daddy!"
+
+That clumsy little voice of yours
+Finds its way straight into my heart.
+You laugh, you fall, then laugh again—
+You're one busy little soul.
+
+When I lift you with these awkward hands,
+You feel so light... and so warm.
+I tell you not to cry,
+Yet somehow I'm the first one to give in.
+
+We don't have much money here.
+I can't buy you anything fancy.
+But these arms will always be here for you.
+Never forget that.
+
+　I'm learning every little part of you,
+　Little by little, from those tiny hands on.
+　Your smiling face, your tearful face—
+　I'll cherish every one of them in my memory.
+
+　I'm learning every little part of you.
+　You already seem bigger than you were yesterday.
+　Before I know it, you'll be out of my reach,
+　But until that day, I'll be watching over you.
+
+Your wobbly little steps grow steadier each day,
+Then you get carried away and tumble again.
+Holding back your tears, nose running,
+You stand up once more.
+
+I wonder where you got that stubborn spirit.
+I'd like to say it came from me,
+But truth be told,
+You've got far more grit than I ever did.
+
+When you're on my shoulders as we walk through town,
+You stare wide-eyed up at the sky.
+"What's that?" you ask me,
+Though I don't always know the answer.
+
+There are so many things I still don't understand.
+That's alright—we'll learn them together.
+From how to fall to how to stand again,
+I'm still learning myself.
+
+　I'm learning every little part of you,
+　Even that little back of yours as it grows.
+　The way you run, the face you make when you're angry—
+　I'll carve every moment into my heart.
+
+　I'm learning every little part of you.
+　Each day you grow a little stronger.
+　Someday you'll be taller than me,
+　And you'll set off into a world of your own.
+
+One day you'll stop holding my hand,
+And I'll probably be left behind.
+There may even come a day
+When we hardly speak at all.
+
+But right now, this tiny hand
+Is still holding tightly onto mine.
+I don't ever want to forget this warmth.
+I don't think I ever should.
+
+　I'm learning every little part of you.
+　I'll never forget who you are today.
+　Your tears, your laughter—every precious moment,
+　I'll hold them close like priceless treasures.
+
+　I'm learning every little part of you.
+　Even when you someday let go of my hand,
+　No matter where life takes you,
+　You'll always be the most precious part of mine.`,
     tags: ["子守", "不器用", "親心"],
     color: "",
     artwork: "",                 // 曲ジャケット画像（例: "images/songs/06.jpg"）
