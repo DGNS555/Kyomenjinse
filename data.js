@@ -1167,7 +1167,7 @@ Talking nonsense till the night's end.
     reading: "もちつもたれつ",
     album: "album-02",
     track: 2,
-    releaseDate: "coming soon",
+    releaseDate: "2026.07.02",
     youtubeId: "",
     description: "持ちつ持たれつ、今日もふたりで浮世道。",
     lyricsJa: `朝はばたばた夜ぁくたくた
@@ -1248,7 +1248,7 @@ You listen—and your few words carry me through.
     reading: "どうどうぶし",
     album: "album-02",
     track: 3,
-    releaseDate: "coming soon",
+    releaseDate: "2026.07.02",
     youtubeId: "",
     description: "働いて、擦り減って、それでも家族の為に踏ん張る者達への讃歌。",
     lyricsJa: `朝まだ暗ぇうちからよ
@@ -1383,7 +1383,7 @@ And a steadfast back carves the road ahead.
     reading: "こもりべた",
     album: "album-02",
     track: 4,
-    releaseDate: "coming soon",
+    releaseDate: "2027.07.02",
     youtubeId: "",
     description: "不器用な親父から「おめぇ」に贈る、江戸流子守唄。",
     lyricsJa: `長屋の隅で朝が来りゃ
@@ -1558,7 +1558,7 @@ I don't think I ever should.
     reading: "あいがさ",
     album: "album-02",
     track: 5,
-    releaseDate: "coming soon",
+    releaseDate: "2027.07.02",
     youtubeId: "",
     description: "藍染めの傘が呼び覚ます、記憶の中のその情け。",
     lyricsJa: `春の雨がしとしとと
@@ -1663,7 +1663,7 @@ Might someday be passed on to someone else.`,
     reading: "わたしぶね",
     album: "album-02",
     track: 6,
-    releaseDate: "coming soon",
+    releaseDate: "2026.07.02",
     youtubeId: "",
     description: "霧の向こうへ渡った友を想い、此岸に残された者の静かな誓いを綴った一曲。",
     lyricsJa: `宵の川風冷たくて
@@ -1774,7 +1774,7 @@ Just like you always did.
     reading: "おんまいうぇい",
     album: "album-02",
     track: 7,
-    releaseDate: "coming soon",
+    releaseDate: "2026.07.02",
     youtubeId: "",
     description: "支えてくれた人々からの恩を胸に、己の道を最後まで歩き抜く覚悟を歌った和風ラップ。",
     lyricsJa: `誰かの地図じゃ辿り着けねぇ
@@ -1895,7 +1895,7 @@ const ALBUMS = [
     titleJa: "人情景",
     titleEn: "Life in Ukiyo",           // 英語タイトルなし → 非表示
     subtitle: "2nd Album",
-    releaseDate: "Coming soon",
+    releaseDate: "2026.07.02",
     artwork: "images/albums/album-02.png",             // アルバムアートワーク（例: "images/albums/album-02.jpg"）
     coverColor: "#261408",
     coverAccent: "#e0c97a",
