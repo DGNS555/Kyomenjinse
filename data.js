@@ -1931,16 +1931,16 @@ const SITE_INFO = {
  */
 const NEWS = [
   // ↓ ここに追記（新しいものを上に）
-  {
+ {
   date: "Coming Soon",
-  tag:  "Release",
-  text: "2nd Album「人情景 - Life in Ukiyo」リリース販売決定！",
+  tag:  "Streaming",
+  text: "Single「子守下手 - A Clumsy Lullaby」ストリーミング配信予定！",
   url:  "https://kyomenjinse.bandcamp.com/album/life-in-ukiyo"
   },
   {
-  date: "Coming Soon",
-  tag:  "Streaming",
-  text: "Single「子守下手 - A Clumsy Lullaby」ストリーミング配信決定！",
+  date: "2026.07.02",
+  tag:  "Release",
+  text: "2nd Album「人情景 - Life in Ukiyo」Bandcampにてリリース販売開始！",
   url:  "https://kyomenjinse.bandcamp.com/album/life-in-ukiyo"
   },
   {
