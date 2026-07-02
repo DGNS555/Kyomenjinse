@@ -931,7 +931,6 @@ The wind carried it through the streets
 “I heard!” “I saw!” the voices pile up
 And embers scatter far and wide
 
-
 People of the town, remember this well
 Behind every blaze, there’s always a wind
 And when you hear the voices calling it forth
