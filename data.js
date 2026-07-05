@@ -1912,10 +1912,13 @@ const SITE_INFO = {
   catchphrase: "浮世を映す鏡〜The Mirror of the Floating World〜",
   description: "鏡面人世（きょうめんじんせ）は、江戸視点で現世を奏でる音楽プロジェクト。",
 
+// ── サイトURL（canonicalやOGP生成に使用） ──
+  siteUrl: "https://kyomenjinse.com",
+
   // ── SNSリンク（URLをここに入力してください） ──
-  youtubeUrl:   "https://youtube.com/@kyomenjinse",   // 例: "https://www.youtube.com/@xxxxxx"
-  tiktokUrl:    "https://www.tiktok.com/@kyomenjinse",   // 例: "https://www.tiktok.com/@xxxxxx"
-  instagramUrl: "https://www.instagram.com/kyomenjinse",   // 例: "https://www.instagram.com/xxxxxx"
+  youtubeUrl:   "https://youtube.com/@kyomenjinse",
+  tiktokUrl:    "https://www.tiktok.com/@kyomenjinse",
+  instagramUrl: "https://www.instagram.com/kyomenjinse",
 };
 
 /**
