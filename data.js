@@ -1383,7 +1383,7 @@ And a steadfast back carves the road ahead.
     reading: "こもりべた",
     album: "album-02",
     track: 4,
-    releaseDate: "2027.07.02",
+    releaseDate: "2026.07.02",
     youtubeId: "",
     description: "不器用な親父から「おめぇ」に贈る、江戸流子守唄。",
     lyricsJa: `長屋の隅で朝が来りゃ
@@ -1558,7 +1558,7 @@ I don't think I ever should.
     reading: "あいがさ",
     album: "album-02",
     track: 5,
-    releaseDate: "2027.07.02",
+    releaseDate: "2026.07.02",
     youtubeId: "",
     description: "藍染めの傘が呼び覚ます、記憶の中のその情け。",
     lyricsJa: `春の雨がしとしとと
