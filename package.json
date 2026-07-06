@@ -1,0 +1,12 @@
+{
+  "name": "kyomenjinse",
+  "version": "1.0.0",
+  "description": "鏡面人世 公式サイト",
+  "private": true,
+  "scripts": {
+    "sitemap": "node scripts/generate-sitemap.js"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}
