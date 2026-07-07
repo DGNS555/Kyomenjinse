@@ -1935,9 +1935,9 @@ const SITE_INFO = {
 const NEWS = [
   // ↓ ここに追記（新しいものを上に）
  {
-  date: "Coming Soon",
+  date: "2026.07.07",
   tag:  "Streaming",
-  text: "Single「子守下手 - A Clumsy Lullaby」ストリーミング配信予定！",
+  text: "Single「子守下手 - A Clumsy Lullaby」AppleMusic,YoutubeMusicにてストリーミング配信開始！他ストアも順次配信予定。",
   url:  "https://kyomenjinse.bandcamp.com/album/life-in-ukiyo"
   },
   {
