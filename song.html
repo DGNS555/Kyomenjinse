@@ -690,7 +690,20 @@
 (function () {
   'use strict';
 
-  const songId = getParam('id');
+  const rawId  = getParam('id') || '';
+  const legacyMap = (typeof LEGACY_ID_MAP !== 'undefined') ? LEGACY_ID_MAP : {};
+  const newSlug   = legacyMap[rawId];
+
+  if (newSlug) {
+    const newUrl = location.href.replace(
+      /([?&]id=)[^&]*/,
+      `$1${encodeURIComponent(newSlug)}`
+    );
+    location.replace(newUrl);
+    return;
+  }
+
+  const songId = rawId;
   const song = (typeof SONGS !== 'undefined' ? SONGS : []).find(s => s.id === songId);
 
   if (!song) {
