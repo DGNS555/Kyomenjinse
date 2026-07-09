@@ -29,9 +29,26 @@
  *
  */
 
+const LEGACY_ID_MAP = {
+  '01': 'zeni-no-hanamichi',
+  '02': 'oni-wa-uchi',
+  '03': 'yokuse',
+  '04': 'kage-asobi',
+  '05': 'kyojitsu-kawaraban',
+  '06': 'hiji-chomoku',
+  '07': 'oedo-daienjo',
+  '08': 'koumou-norito',
+  '09': 'hibi-jojo',
+  '10': 'mochitsu-motaretsu',
+  '11': 'do-do-bushi',
+  '12': 'komori-beta',
+  '13': 'aigasa',
+  '14': 'watashi-bune',
+  '15': 'on-my-way',
+};
 const SONGS = [
   {
-    id: "01",
+    id: "zeni-no-hanamichi",
     title: "銭の花道",
     titleEn: "the Wealth Devide",           // ← 英語サブタイトル。不要なら "" のままでOK
     reading: "ぜにのはなみち",
@@ -156,7 +173,7 @@ And I’ll be waiting for that day to come.`,
     base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   },
   {
-    id: "02",
+    id: "oni-wa-uchi",
     title: "鬼は内",
     titleEn: "the Demon is Inside You",
     reading: "おにはうち",
@@ -302,7 +319,7 @@ That’s the style the wise ones know.
     base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   },
   {
-    id: "03",
+    id: "yokuse",
     title: "欲世",
     titleEn: "In Greed We Trust",
     reading: "よくせ",
@@ -448,7 +465,7 @@ Me… you… or perhaps someone else?`,
   },
   {
     id: "04",
-    title: "影遊び",
+    title: "kage-asobi",
     titleEn: "Play with Shadows",
     reading: "かげあそび",
     album: "album-01",
@@ -566,7 +583,7 @@ which one of us is real?
     base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   },
   {
-    id: "05",
+    id: "kyojitsu-kawaraban",
     title: "虚実瓦版",
     titleEn: "Lost in Echo Chamber",
     reading: "きょじつかわらばん",
@@ -723,7 +740,7 @@ Close your eyes—And somehow it grows clearer.
     base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   },
   {
-    id: "06",
+    id: "hiji-chomoku",
     title: "飛耳長目",
     titleEn: "Seeing Through the Lies",
     reading: "ひじちょうもく",
@@ -852,7 +869,7 @@ Its name is Hiji-Chomoku
     base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   },
   {
-    id: "07",
+    id: "oedo-daienjo",
     title: "お江戸大炎上",
     titleEn: "Edo is Burning",
     decoText: "お江戸|大炎上",
@@ -968,7 +985,7 @@ Another spark is quietly dropped
     base: "https://kyoumenjinse.base.shop",
   },
     {
-    id: "08",
+    id: "koumou-norito",
     title: "光網祝詞",
     titleEn: "Hymn of the Luminous Net",
     reading: "こうもうのりと",
@@ -1051,7 +1068,7 @@ It weaves together the pathways of dreams.
     base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   },
       {
-    id: "09",
+    id: "hibi-jojo",
     title: "日々上々",
     titleEn: "Days Getting Better",
     reading: "ひびじょうじょう",
@@ -1160,7 +1177,7 @@ Talking nonsense till the night's end.
     base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   },
       {
-    id: "10",
+    id: "mochitsu-motaretsu",
     title: "持ちつ持たれつ",
     titleEn: "Holding Each Other Up",
     decoText: "持ちつ|持たれつ",
@@ -1242,7 +1259,7 @@ You listen—and your few words carry me through.
     base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   },
       {
-    id: "11",
+    id: "do-do-bushi",
     title: "働々節",
     titleEn: "Sweat, Grit & Pride",
     reading: "どうどうぶし",
@@ -1377,7 +1394,7 @@ And a steadfast back carves the road ahead.
     base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   },
       {
-    id: "12",
+    id: "komori-beta",
     title: "子守下手",
     titleEn: "A Clumsy Lullaby",
     reading: "こもりべた",
@@ -1552,7 +1569,7 @@ I don't think I ever should.
     base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   },
       {
-    id: "13",
+    id: "aigasa",
     title: "藍傘",
     titleEn: "the Indigo Umbrella",
     reading: "あいがさ",
@@ -1657,7 +1674,7 @@ Might someday be passed on to someone else.`,
     base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   },
       {
-    id: "14",
+    id: "watashi-bune",
     title: "渡し舟",
     titleEn: "The Ferry Beyond",
     reading: "わたしぶね",
@@ -1768,7 +1785,7 @@ Just like you always did.
     base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   },
       {
-    id: "15",
+    id: "on-my-way",
     title: "恩毎上位",
     titleEn: "On My Way",
     reading: "おんまいうぇい",
