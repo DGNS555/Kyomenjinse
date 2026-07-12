@@ -204,15 +204,20 @@
 <script src="data.js"></script>
 <script src="main.js"></script>
 <script>
-  let currentAlbum = 'all';
+  'use strict';
 
-  // フィルターボタン生成
+  // ── 状態管理 ─────────────────────────────────────
+  // data.js は1回だけ読み込み済み。検索のたびに再取得しない。
+  let currentAlbum = 'all';  // 選択中のアルバムフィルター
+  let currentQuery = '';     // 検索クエリ（小文字に正規化済み）
+
+  // ── フィルターボタン生成（アルバム別） ──────────
   const filterBar = document.getElementById('filter-bar');
   ALBUMS.forEach(album => {
     const btn = document.createElement('button');
     btn.className = 'filter-btn';
     btn.dataset.album = album.id;
-    btn.textContent = album.title;
+    btn.textContent = album.titleJa || album.title;
     filterBar.appendChild(btn);
   });
 
@@ -226,25 +231,100 @@
     renderList();
   });
 
-  // リスト描画
+  // ── 検索処理 renderSearch() ──────────────────────
+  /**
+   * 検索ボックスへの入力をリアルタイムで処理する。
+   *
+   * 検索対象フィールド：
+   *   title（日本語）/ titleEn（英語）/ id（ローマ字スラッグ）/
+   *   アルバム名 / tags / description
+   *
+   * 大文字・小文字は区別しない（toLowerCase で正規化）。
+   * 入力欄を空にすると全件表示へ戻る。
+   * フィルター（アルバム）と検索クエリは AND 条件で絞り込む。
+   */
+  const searchInput = document.getElementById('search-input');
+  const searchClear = document.getElementById('search-clear');
+
+  searchInput.addEventListener('input', () => {
+    currentQuery = searchInput.value.trim().toLowerCase();
+    // クリアボタンの表示／非表示
+    searchClear.style.display = currentQuery ? 'block' : 'none';
+    renderList();
+  });
+
+  // ✕ ボタンで検索をリセット
+  searchClear.addEventListener('click', () => {
+    searchInput.value = '';
+    currentQuery = '';
+    searchClear.style.display = 'none';
+    searchInput.focus();
+    renderList();
+  });
+
+  /**
+   * 1曲が現在のクエリに一致するかを判定する。
+   * 複数フィールドをまとめた文字列に対して indexOf で部分一致チェック。
+   */
+  function matchesQuery(song, query) {
+    if (!query) return true;
+    const albumData = ALBUMS.find(a => a.id === song.album);
+    const albumName = albumData ? (albumData.titleJa || albumData.title || '') : '';
+    const tagsStr   = Array.isArray(song.tags) ? song.tags.join(' ') : '';
+    const haystack  = [
+      song.title        || '',
+      song.titleEn      || '',
+      song.id           || '',
+      song.reading      || '',
+      albumName,
+      tagsStr,
+      song.description  || '',
+    ].join(' ').toLowerCase();
+    return haystack.indexOf(query) !== -1;
+  }
+
+  // ── リスト描画 renderList() ──────────────────────
+  /**
+   * アルバムフィルター × 検索クエリ の AND 条件で絞り込んでカードを描画する。
+   * 描画のたびに DOM を再構築する（innerHTML = '' でリセット）。
+   * data.js の再取得は行わない（SONGS はグローバルで保持済み）。
+   */
   function renderList() {
-    const list = document.getElementById('songs-list');
+    const list  = document.getElementById('songs-list');
     const count = document.getElementById('songs-count');
     list.innerHTML = '';
 
-    const filtered = currentAlbum === 'all'
+    // ① アルバムフィルター
+    const afterAlbum = currentAlbum === 'all'
       ? SONGS
       : SONGS.filter(s => s.album === currentAlbum);
 
-    count.textContent = `${filtered.length} 曲`;
+    // ② 検索クエリで絞り込み
+    const filtered = currentQuery
+      ? afterAlbum.filter(s => matchesQuery(s, currentQuery))
+      : afterAlbum;
 
+    // 件数表示（全件 or 絞り込み中の件数を "N曲中M曲表示" 形式で表示）
+    if (currentQuery || currentAlbum !== 'all') {
+      const total = currentAlbum === 'all' ? SONGS.length : afterAlbum.length;
+      count.textContent = filtered.length < total
+        ? `${total}曲中 ${filtered.length}曲表示`
+        : `${filtered.length} 曲`;
+    } else {
+      count.textContent = `${filtered.length} 曲`;
+    }
+
+    // 0件メッセージ
     if (filtered.length === 0) {
-      list.innerHTML = '<p style="text-align:center;padding:5rem 2rem;color:var(--usuzumi);font-size:0.85rem;letter-spacing:0.15em;">楽曲が見つかりません。</p>';
+      list.innerHTML =
+        '<p class="search-empty">' +
+        '「' + escHtml(searchInput.value) + '」' +
+        'に該当する楽曲が見つかりません。<br>別のキーワードをお試しください。' +
+        '</p>';
       return;
     }
 
-    // data.js の SONGS 配列から直接カードを生成（HTMLへの直書きは一切なし）。
-    // 新しい曲を data.js に追記するだけで、ここが自動的に反映される。
+    // カード生成
     filtered.forEach(song => {
       list.appendChild(buildSongCardEl(song));
     });
@@ -252,12 +332,20 @@
     initFadeIn();
   }
 
+  // XSS対策：ユーザー入力を innerHTML に埋め込む前にエスケープする
+  function escHtml(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
   /**
    * 楽曲データから1枚のカード要素を生成する（songs.html 専用）。
    *
-   * main.js の createSongCard() は index.html（最新曲グリッド）と
-   * song.html（関連曲グリッド）でも共用されているため、ここで仕様を
-   * 拡張すると他ページの見た目まで変わってしまう。
+   * main.js の createSongCard() は index.html・song.html でも共用されているため、
+   * ここで仕様を拡張すると他ページの見た目まで変わってしまう。
    * そのため songs.html だけで完結するこの専用関数を用意し、
    * 既存ページのデザイン・挙動には一切影響を与えないようにしている。
    *
@@ -268,62 +356,61 @@
     const albumData = ALBUMS.find(a => a.id === song.album);
 
     const card = document.createElement('a');
-    card.href = `song.html?id=${song.id}`; // クリック時の遷移先は従来どおり song.html?id=曲ID
+    card.href = `song.html?id=${song.id}`;
     card.className = 'song-card fade-in';
 
-    // ジャケット画像：曲固有の artwork が設定されている場合のみ表示する。
-    // （アルバム画像を流用すると全曲が同じ画像に見えてしまうため、ここでは流用しない）
+    // ジャケット画像：曲固有の artwork が設定されている場合のみ表示
     const artworkSrc = song.artwork || '';
     const imgHtml = artworkSrc
-      ? `<img class="song-card-img" src="${artworkSrc}" alt="${song.title || ''}" loading="lazy">`
+      ? `<img class="song-card-img" src="${artworkSrc}" alt="${escHtml(song.title || '')}" loading="lazy">`
       : '';
 
-    // 英語サブタイトル：未設定なら要素ごと出力しない
+    // 英語サブタイトル
     const titleEnHtml = song.titleEn
-      ? `<div class="song-card-title-en">${song.titleEn}</div>`
+      ? `<div class="song-card-title-en">${escHtml(song.titleEn)}</div>`
       : '';
 
-    // リリース年："2024.03.21" → "2024"。"Coming soon" 等パース不可の場合は年表示を省略
+    // リリース年
     const year = extractReleaseYear(song.releaseDate);
     const yearHtml = year ? ` <span class="song-card-year">／ ${year}</span>` : '';
 
-    // タグ：配列が空 or 未設定なら欄ごと出力しない（空のタグ枠を残さない）
+    // タグ
     const tagsHtml = Array.isArray(song.tags) && song.tags.length > 0
-      ? `<div class="song-card-tags">${song.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>`
+      ? `<div class="song-card-tags">${song.tags.map(t => `<span class="tag">${escHtml(t)}</span>`).join('')}</div>`
       : '';
 
-    const albumName = albumData ? (albumData.titleJa || albumData.title) : '';
-    const descShort = truncateText(song.description, 60); // 説明文を短縮表示
+    const albumName  = albumData ? (albumData.titleJa || albumData.title) : '';
+    const descShort  = truncateText(song.description, 60);
 
     card.innerHTML = `
       ${imgHtml}
       <div class="song-card-track">
-        ${albumName ? albumName + ' — ' : ''}Track ${song.track ?? '-'}${yearHtml}
+        ${albumName ? escHtml(albumName) + ' — ' : ''}Track ${song.track ?? '-'}${yearHtml}
       </div>
-      <div class="song-card-title">${song.title || ''}</div>
+      <div class="song-card-title">${escHtml(song.title || '')}</div>
       ${titleEnHtml}
-      <div class="song-card-reading">${song.reading || ''}</div>
-      <div class="song-card-desc">${descShort}</div>
+      <div class="song-card-reading">${escHtml(song.reading || '')}</div>
+      <div class="song-card-desc">${escHtml(descShort)}</div>
       ${tagsHtml}
     `;
 
     return card;
   }
 
-  // "2024.03.21" のような文字列から先頭4桁の年だけを抜き出す。
-  // 数字で始まらない値（"Coming soon" 等）は空文字を返す。
+  // "2024.03.21" → "2024"。パース不可なら空文字
   function extractReleaseYear(dateStr) {
     if (!dateStr) return '';
-    const matched = dateStr.match(/^(\d{4})/);
-    return matched ? matched[1] : '';
+    const m = dateStr.match(/^(\d{4})/);
+    return m ? m[1] : '';
   }
 
-  // 説明文をカード内に収まる長さへ短縮する（タグ表示崩れの原因にもなる長文を防止）。
+  // 説明文を指定文字数で短縮
   function truncateText(text, maxLength) {
     if (!text) return '';
     return text.length > maxLength ? text.slice(0, maxLength).trim() + '…' : text;
   }
 
+  // 初期描画
   renderList();
 </script>
 </body>
