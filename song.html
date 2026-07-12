@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO基本タグ（JS で動的に内容を書き換える） ===== -->
+  <title>楽曲詳細 | 鏡面人世</title>
+  <meta name="description" content="">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#1c1208">
+  <link rel="canonical" href="">
+
+  <!-- ===== OGP（Open Graph Protocol） ===== -->
+  <!-- SNS（X・LINE・Facebook等）でシェアされた際のプレビュー情報 -->
+  <meta property="og:type" content="music.song">
+  <meta property="og:site_name" content="鏡面人世">
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <!-- X（旧Twitter）でシェアされた際のカード表示 -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="">
+
+  <!-- ===== favicon ===== -->
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="favicon.png">
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .song-detail-page { padding-bottom: var(--gap-xl); }
+
+    /* ── ヘッダー ────────────────────── */
+    .song-hero {
+      min-height: 60vh;
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+      overflow: hidden;
+      padding: 8rem 0 4rem;
+    }
+
+    .song-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.18) 0%, transparent 60%);
+      z-index: 0;
+    }
+
+    /* 縦書き装飾タイトル */
+    .song-hero-deco {
+      position: absolute;
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: row-reverse; /* 列は右から左へ（縦書きの自然な方向） */
+      gap: 0.05em;
+      user-select: none;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* 各列 */
+    .deco-col {
+      writing-mode: vertical-rl;
+      font-family: var(--font-serif);
+      font-size: clamp(6rem, 14vw, 14rem);
+      font-weight: 700;
+      color: rgba(201,168,76,0.18);
+      letter-spacing: 0.08em;
+      line-height: 1;
+    }
+
+    .song-hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 0 2.5rem;
+      max-width: 700px;
+    }
+
+    .song-hero-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      color: var(--usuzumi);
+      margin-bottom: 2rem;
+      transition: color 0.3s;
+    }
+    .song-hero-back:hover { color: var(--shiro); }
+
+    .song-hero-album {
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      color: var(--kin);
+      margin-bottom: 1rem;
+    }
+
+    .song-hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 7vw, 5.5rem);
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      line-height: 1.1;
+      margin-bottom: 0.4rem;
+    }
+
+    .song-hero-title-en {
+      font-family: var(--font-serif);
+      font-size: clamp(1.1rem, 3.2vw, 2.2rem);
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: rgba(245,237,216,0.5);
+      margin-bottom: 1.2rem;
+      line-height: 1.3;
+    }
+
+    .song-hero-reading {
+      font-size: 0.85rem;
+      letter-spacing: 0.25em;
+      color: var(--usuzumi);
+      margin-bottom: 2rem;
+    }
+
+    .song-hero-tags {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    /* ── メインレイアウト（1カラム縦積み） ── */
+    .song-main {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      padding: 3rem 2.5rem 0;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    /* ── 動画 ────────────────────────── */
+    .song-video-section { }
+    .song-section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      color: var(--kin);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .song-section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(201,168,76,0.18);
+    }
+
+    .youtube-placeholder {
+      aspect-ratio: 16/9;
+      background: rgba(61,42,16,0.5);
+      border: 1px solid rgba(201,168,76,0.18);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      color: var(--usuzumi);
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .youtube-placeholder:hover { background: rgba(61,42,16,0.5); }
+    .play-icon {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,168,76,0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: border-color 0.3s;
+    }
+    .youtube-placeholder:hover .play-icon { border-color: var(--shiro); color: var(--shiro); }
+
+    /* ── 楽曲情報 ────────────────────── */
+    .song-desc {
+      margin-top: 2.5rem;
+      padding: 1.5rem;
+      border-left: 2px solid rgba(201,168,76,0.18);
+      font-size: 0.88rem;
+      line-height: 2;
+      color: rgba(240,237,232,0.75);
+      letter-spacing: 0.08em;
+    }
+
+    .song-meta-table {
+      margin-top: 2.5rem;
+    }
+    .song-meta-row {
+      display: flex;
+      gap: 1rem;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid rgba(201,168,76,0.18);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+    }
+    .song-meta-key {
+      color: var(--usuzumi);
+      width: 6rem;
+      flex-shrink: 0;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+    }
+    .song-meta-val { color: var(--shiro); }
+
+    /* ── 歌詞 ────────────────────────── */
+    .song-lyrics-section {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(201,168,76,0.18) transparent;
+    }
+
+    .lyrics-box {
+      border: 1px solid rgba(201,168,76,0.18);
+      background: rgba(37,26,12,0.5);
+      padding: 2rem;
+    }
+
+    /* タイトルバー */
+    .lyrics-title-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(201,168,76,0.18);
+    }
+
+    .lyrics-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      color: var(--kin);
+    }
+
+    /* ボタン群 */
+    .lyrics-controls {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .lyrics-toggle,
+    .lyrics-lang-btn {
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      color: var(--usuzumi);
+      padding: 4px 10px;
+      border: 1px solid rgba(201,168,76,0.25);
+      cursor: pointer;
+      transition: all 0.25s;
+      background: transparent;
+      font-family: var(--font-sans);
+    }
+    .lyrics-toggle:hover,
+    .lyrics-lang-btn:hover { color: var(--washi); border-color: var(--kin); }
+    .lyrics-lang-btn.active {
+      color: var(--cha-deep);
+      background: var(--kin);
+      border-color: var(--kin);
+    }
+
+    /* 歌詞本体 */
+    .lyrics-body { }
+
+    /* 段落（空行で区切られたブロック） */
+    .lyrics-paragraph {
+      margin-bottom: 1.6rem;
+    }
+    .lyrics-paragraph:last-child { margin-bottom: 0; }
+
+    /* 1行ペア（日本語＋英訳） */
+    .lyrics-line-pair {
+      margin-bottom: 0.15rem;
+    }
+
+    .lyrics-line-ja {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      line-height: 1.9;
+      letter-spacing: 0.08em;
+      color: rgba(245,237,216,0.92);
+      display: block;
+    }
+
+    .lyrics-line-en {
+      font-size: 0.78rem;
+      line-height: 1.6;
+      letter-spacing: 0.04em;
+      color: rgba(245,237,216,0.45);
+      display: block;
+      margin-bottom: 0.4rem;
+      font-style: italic;
+      transition: opacity 0.3s;
+    }
+
+    /* 英訳非表示モード */
+    .lyrics-body.ja-only .lyrics-line-en {
+      display: none;
+    }
+
+    /* 折りたたみ */
+    .lyrics-box.lyrics-hidden .lyrics-body {
+      max-height: 14rem;
+      overflow: hidden;
+      mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+    }
+
+    /* ── アートワーク ────────────────────── */
+    .song-artwork-section { }
+
+    .song-artwork-frame {
+      position: relative;
+      width: 100%;
+      max-width: 360px;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border: 1px solid rgba(201,168,76,0.3);
+      box-shadow:
+        0 0 0 1px rgba(201,168,76,0.08),
+        0 8px 32px rgba(0,0,0,0.5),
+        0 0 24px rgba(240,208,64,0.06);
+    }
+
+    .song-artwork-img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .song-artwork-frame:hover .song-artwork-img {
+      transform: scale(1.03);
+    }
+
+    /* 右下にアルバム名のオーバーレイ */
+    .song-artwork-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1.5rem 1rem 0.8rem;
+      background: linear-gradient(to top, rgba(20,12,3,0.75), transparent);
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      color: rgba(240,208,64,0.7);
+      text-align: right;
+    }
+
+    /* ── ここまでアートワーク ─────────────── */
+    .preview-section {
+      margin-top: 2.5rem;
+    }
+
+    .preview-player {
+      border: 1px solid rgba(201,168,76,0.28);
+      background: rgba(37,26,12,0.7);
+      padding: 1.4rem 1.6rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* 背景のわずかな金光 */
+    .preview-player::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(to right, transparent, var(--kin), transparent);
+      opacity: 0.5;
+    }
+
+    .preview-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      color: var(--kin);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .preview-label::after {
+      content: '試聴のみ · フルはリンクから';
+      color: var(--usuzumi);
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+    }
+
+    /* コントロール行 */
+    .preview-controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    /* 再生ボタン */
+    .preview-play-btn {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,168,76,0.5);
+      background: transparent;
+      color: var(--kin-light);
+      font-size: 0.75rem;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: background 0.25s, border-color 0.25s, transform 0.15s;
+      flex-shrink: 0;
+      padding-left: 2px; /* ▶ の視覚中心補正 */
+    }
+    .preview-play-btn:hover {
+      background: rgba(201,168,76,0.15);
+      border-color: var(--kin-light);
+    }
+    .preview-play-btn:active { transform: scale(0.93); }
+    .preview-play-btn.playing {
+      background: rgba(201,168,76,0.12);
+      border-color: var(--kin);
+      padding-left: 0;
+    }
+
+    /* プログレスバー（表示のみ・シーク不可） */
+    .preview-progress-wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .preview-bar-track {
+      width: 100%; height: 2px;
+      background: rgba(201,168,76,0.15);
+      position: relative;
+      cursor: default; /* クリック無効の視覚表現 */
+    }
+
+    .preview-bar-fill {
+      height: 100%;
+      background: linear-gradient(to right, var(--kin-dark), var(--kin));
+      width: 0%;
+      transition: width 0.5s linear;
+      pointer-events: none;
+    }
+
+    /* 発光ドット */
+    .preview-bar-dot {
+      position: absolute;
+      top: 50%; right: 0;
+      transform: translate(50%, -50%);
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--kin-light);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .preview-play-btn.playing ~ .preview-progress-wrap .preview-bar-dot { opacity: 1; }
+
+    .preview-time {
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      color: var(--usuzumi);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* 購入ボタン群 */
+    .preview-purchase {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .purchase-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.55rem 1.2rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      border: 1px solid;
+      transition: all 0.25s;
+      font-family: var(--font-sans);
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .purchase-btn-listen {
+      border-color: rgba(201,168,76,0.5);
+      color: var(--kin-light);
+      background: transparent;
+    }
+    .purchase-btn-listen:hover {
+      background: rgba(201,168,76,0.12);
+      border-color: var(--kin-light);
+    }
+
+    .purchase-btn-buy {
+      border-color: rgba(201,168,76,0.3);
+      color: var(--usuzumi);
+      background: transparent;
+    }
+    .purchase-btn-buy:hover {
+      border-color: rgba(201,168,76,0.6);
+      color: var(--kin-light);
+    }
+
+    .purchase-btn-icon {
+      font-size: 0.65rem;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 480px) {
+      .preview-purchase { flex-direction: column; }
+      .purchase-btn { justify-content: center; }
+    }
+
+    /* ── ここまでプレイヤー ─────────────── */
+
+    /* ── 関連曲 ────────────────────────── */
+    .song-related {
+      padding: 4rem 2.5rem 0;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1px;
+      background: rgba(201,168,76,0.18);
+      border: 1px solid rgba(201,168,76,0.18);
+      margin-top: 2rem;
+    }
+    .related-grid .song-card {
+      background: rgba(37,26,12,0.5);
+      border: none;
+    }
+
+    /* レスポンシブ */
+    @media (max-width: 768px) {
+      .song-main {
+        padding: 2rem 1.5rem 0;
+        gap: 2rem;
+      }
+      .song-hero-content { padding: 0 1.5rem; }
+      .song-related { padding: 2.5rem 1.5rem 0; }
+    }
+
+    /* ============================================================
+       前の曲・次の曲ナビゲーション
+       ============================================================ */
+    .song-prevnext {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.12);
+      margin: 3rem auto 0;
+      max-width: 780px;
+      padding: 0 2.5rem;
+      box-sizing: content-box;
+    }
+
+    /* 片方だけの場合はgrid-column全幅へ */
+    .song-prevnext:has(.pn-btn:only-child) .pn-btn,
+    .song-prevnext.only-prev  .pn-btn,
+    .song-prevnext.only-next  .pn-btn {
+      grid-column: 1 / -1;
+    }
+
+    .pn-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      padding: 1.1rem 1.2rem;
+      background: rgba(20,12,3,0.5);
+      text-decoration: none;
+      color: var(--washi);
+      transition: background 0.25s;
+      min-width: 0; /* flex子要素のはみ出し防止 */
+    }
+    .pn-btn:hover { background: rgba(61,42,16,0.6); }
+
+    /* 次の曲は右寄せ */
+    .pn-btn.pn-next {
+      flex-direction: row-reverse;
+      text-align: right;
+    }
+
+    /* ジャケット画像 */
+    .pn-img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 1px solid rgba(201,168,76,0.2);
+    }
+
+    /* 画像なし時のプレースホルダー */
+    .pn-img-placeholder {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      opacity: 0.5;
+    }
+
+    .pn-info { min-width: 0; flex: 1; }
+
+    .pn-label {
+      font-size: 0.58rem;
+      letter-spacing: 0.28em;
+      color: var(--kin);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .pn-title {
+      font-family: var(--font-serif);
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: var(--kin-pale);
+    }
+
+    .pn-reading {
+      font-size: 0.65rem;
+      color: var(--usuzumi);
+      letter-spacing: 0.1em;
+      margin-top: 0.15rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    @media (max-width: 768px) {
+      .song-prevnext {
+        padding: 0 1.5rem;
+        margin-top: 2.5rem;
+      }
+      .pn-title  { font-size: 0.82rem; }
+      .pn-reading { display: none; }
+    }
+
+    @media (max-width: 420px) {
+      .pn-img, .pn-img-placeholder { width: 38px; height: 38px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <a href="index.html" class="nav-logo">鏡面人世</a>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="songs.html">Songs</a>
+    <a href="albums.html">Albums</a>
+  </nav>
+  <button class="nav-burger" id="burger" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="nav-mobile" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="songs.html">Songs</a>
+  <a href="albums.html">Albums</a>
+</nav>
+
+<!-- 楽曲ヒーロー -->
+<section class="song-hero" id="song-hero">
+  <div class="song-hero-bg"></div>
+  <div class="song-hero-deco" id="song-deco"></div>
+  <div class="song-hero-content">
+    <a href="songs.html" class="song-hero-back">← 楽曲一覧へ戻る</a>
+    <p class="song-hero-album" id="song-album"></p>
+    <h1 class="song-hero-title" id="song-title">—</h1>
+    <p class="song-hero-title-en" id="song-title-en"></p>
+    <p class="song-hero-reading" id="song-reading"></p>
+    <div class="song-hero-tags" id="song-tags"></div>
+  </div>
+</section>
+
+<!-- メインコンテンツ -->
+<div class="song-detail-page">
+  <div class="song-main">
+
+    <!-- ⓪ アートワーク（曲またはアルバムのジャケット） -->
+    <div class="song-artwork-section fade-in" id="song-artwork-section" style="display:none;">
+      <div class="song-artwork-frame">
+        <img id="song-artwork-img" src="" alt="" class="song-artwork-img">
+        <div class="song-artwork-caption" id="song-artwork-caption"></div>
+      </div>
+    </div>
+
+    <!-- ① 曲紹介文 -->
+    <div class="song-desc fade-in" id="song-desc"></div>
+
+    <!-- ② 試聴プレイヤー（previewAudioがある曲のみ表示） -->
+    <div class="preview-section fade-in" id="preview-section" style="display:none;">
+      <div class="song-section-label">PREVIEW</div>
+      <div class="preview-player">
+        <div class="preview-label">LISTEN</div>
+        <div class="preview-controls">
+          <button class="preview-play-btn" id="preview-play-btn" aria-label="再生">▶</button>
+          <div class="preview-progress-wrap">
+            <div class="preview-bar-track">
+              <div class="preview-bar-fill" id="preview-bar"></div>
+              <div class="preview-bar-dot" id="preview-dot"></div>
+            </div>
+            <div class="preview-time">
+              <span id="preview-cur">0:00</span>
+              <span id="preview-dur">—</span>
+            </div>
+          </div>
+        </div>
+        <div class="preview-purchase" id="preview-purchase"></div>
+      </div>
+    </div>
+
+    <!-- ③ MUSIC VIDEO -->
+    <div class="song-video-section fade-in">
+      <div class="song-section-label">MUSIC VIDEO</div>
+      <div id="video-area"></div>
+    </div>
+
+    <!-- ④ LYRICS -->
+    <div class="song-lyrics-section fade-in">
+      <div class="lyrics-box lyrics-hidden" id="lyrics-box">
+        <div class="lyrics-title-bar">
+          <span class="lyrics-label">LYRICS</span>
+          <div class="lyrics-controls">
+            <button class="lyrics-lang-btn active" id="btn-bilingual">日本語 / EN</button>
+            <button class="lyrics-lang-btn" id="btn-ja-only">日本語のみ</button>
+            <button class="lyrics-toggle" id="lyrics-toggle">全て表示</button>
+          </div>
+        </div>
+        <div class="lyrics-body" id="lyrics-body"></div>
+      </div>
+    </div>
+
+    <!-- ⑤ リリースノート -->
+    <div class="song-meta-table fade-in" id="song-meta"></div>
+
+  </div>
+
+  <!-- 同アルバムの関連曲 -->
+  <div class="song-related">
+    <div class="song-section-label fade-in">SAME ALBUM</div>
+    <div class="related-grid fade-in" id="related-grid"></div>
+  </div>
+
+  <!-- 前の曲・次の曲ナビゲーション（JSで動的生成） -->
+  <div class="song-prevnext fade-in" id="song-prevnext"></div>
+</div>
+
+<footer class="footer"></footer>
+
+<script src="data.js"></script>
+<script src="main.js"></script>
+<script>
+/**
+ * song.html — 完全動的レンダリングスクリプト
+ * =====================================================
+ * URL例: song.html?id=natsuzora
+ *   → data.js の SONGS 配列から id === "natsuzora" の項目を検索し、
+ *     見つかった全フィールドをこのページに反映する。
+ *
+ * 設計方針：
+ *  - data.js のどのフィールドが欠けていても画面が壊れないよう、
+ *    各レンダリング関数は必ず安全なデフォルト値にフォールバックする。
+ *  - 出力されるHTML構造・クラス名・見た目は既存版から一切変更していない
+ *    （CSSは無改修で動作する）。
+ *  - 1関数 = 1セクションの責務に分割し、保守しやすくしている。
+ */
+(function () {
+  'use strict';
+
+  const songId = getParam('id');
+  const song = (typeof SONGS !== 'undefined' ? SONGS : []).find(s => s.id === songId);
+
+  if (!song) {
+    renderNotFound();
+    return;
+  }
+
+  const album = (typeof ALBUMS !== 'undefined' ? ALBUMS : []).find(a => a.id === song.album);
+
+  // ── 各セクションを順番にレンダリング ──
+  renderSEO(song, album);
+  renderHero(song, album);
+  renderTags(song);
+  renderHeroBackground(song);
+  renderVideo(song);
+  renderDescription(song);
+  renderMeta(song, album);
+  renderLyrics(song);
+  renderArtwork(song, album);
+  renderPreviewPlayer(song);
+  renderRelated(song);
+  renderPrevNext(song);  // 前の曲・次の曲ナビゲーション
+
+  setTimeout(initFadeIn, 100);
+
+  /* ════════════════════════════════════════
+     以下、各セクションのレンダリング関数
+  ════════════════════════════════════════ */
+
+/**
+   * renderSEO — SEO関連タグを1箇所で集中管理する関数
+   *
+   * 設定対象：
+   *  - document.title
+   *  - meta description（120〜160字目安で自動補完）
+   *  - canonical（https://kyomenjinse.com/song.html?id=曲ID）
+   *  - robots
+   *  - OGP（og:title / og:description / og:image / og:url / og:type）
+   *  - Twitter Card（twitter:title / twitter:description / twitter:image）
+   *  - JSON-LD（MusicRecording + BreadcrumbList）
+   *
+   * 実装方針：
+   *  - 同じ属性のタグを二重生成しないよう、必ず querySelector で検索し
+   *    存在すれば setAttribute で上書き、なければ createElement → appendChild。
+   *  - 画像は 曲固有artwork → アルバム画像 → "" の優先順位で解決する。
+   *  - description が短い場合はアルバム名・タグ・世界観を自動連結して補完する。
+   *  - JSON-LD は <script type="application/ld+json"> で出力。
+   */
+  function renderSEO(song, album) {
+    const BASE_URL  = 'https://kyomenjinse.com';
+    const PAGE_URL  = `${BASE_URL}/song.html?id=${encodeURIComponent(song.id)}`;
+    const SITE_NAME = '鏡面人世';
+
+    // ── 画像URL解決（絶対URLに変換。空の場合は空文字のまま） ──
+    const rawImg = song.artwork || (album && album.artwork) || '';
+    const imgUrl = rawImg
+      ? (rawImg.startsWith('http') ? rawImg : `${BASE_URL}/${rawImg.replace(/^\.?\/?/, '')}`)
+      : '';
+
+    // ── descriptionを120〜160字で生成 ──
+    const descFull = buildDescription(song, album);
+
+    // ── 1. document.title ──
+    document.title = `${song.title || '楽曲詳細'} | ${SITE_NAME}`;
+
+    // ── 2. SEO基本タグ群 ──
+    setMeta('name', 'description',  descFull);
+    setMeta('name', 'robots',       'index,follow');
+    setMeta('name', 'theme-color',  '#1c1208');
+    setLink('canonical', PAGE_URL);
+
+    // ── 3. OGP ──
+    setMeta('property', 'og:type',        'music.song');
+    setMeta('property', 'og:site_name',   SITE_NAME);
+    setMeta('property', 'og:title',       `${song.title || ''} | ${SITE_NAME}`);
+    setMeta('property', 'og:description', descFull);
+    setMeta('property', 'og:image',       imgUrl);
+    setMeta('property', 'og:url',         PAGE_URL);
+    setMeta('property', 'og:locale',      'ja_JP');
+
+    // ── 4. Twitter Card ──
+    setMeta('name', 'twitter:card',        'summary_large_image');
+    setMeta('name', 'twitter:title',       `${song.title || ''} | ${SITE_NAME}`);
+    setMeta('name', 'twitter:description', descFull);
+    setMeta('name', 'twitter:image',       imgUrl);
+
+    // ── 5. JSON-LD（MusicRecording 構造化データ） ──
+    const jsonLd = {
+      '@context': 'https://schema.org',
+      '@type':    'MusicRecording',
+      name:       song.title  || '',
+      url:        PAGE_URL,
+      byArtist: {
+        '@type': 'MusicGroup',
+        name:    SITE_NAME,
+        url:     BASE_URL,
+      },
+    };
+    if (song.releaseDate && /^\d{4}/.test(song.releaseDate)) {
+      jsonLd.datePublished = song.releaseDate.replace(/\./g, '-');
+    }
+    if (album) {
+      jsonLd.inAlbum = {
+        '@type': 'MusicAlbum',
+        name:    album.titleJa || album.title || '',
+        url:     `${BASE_URL}/albums.html#${album.id}`,
+      };
+    }
+    if (imgUrl) jsonLd.image = imgUrl;
+    if (Array.isArray(song.tags) && song.tags.length > 0) jsonLd.genre = song.tags;
+    if (song.youtubeId) jsonLd.sameAs = `https://www.youtube.com/watch?v=${song.youtubeId}`;
+    injectJsonLd('ld-music-recording', jsonLd);
+
+    // ── 6. BreadcrumbList（パンくずリスト・表示UIなし） ──
+    const breadcrumb = {
+      '@context': 'https://schema.org',
+      '@type':    'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home',  item: BASE_URL + '/' },
+        { '@type': 'ListItem', position: 2, name: 'Songs', item: BASE_URL + '/songs.html' },
+        { '@type': 'ListItem', position: 3, name: song.title || '楽曲詳細', item: PAGE_URL },
+      ],
+    };
+    injectJsonLd('ld-breadcrumb', breadcrumb);
+  }
+
+  /** description を 120〜160 字で構築する */
+  function buildDescription(song, album) {
+    const base = (song.description || '').trim();
+    if (base.length >= 80) return base.slice(0, 160);
+    const parts = [];
+    if (base) parts.push(base);
+    if (album) parts.push(`収録アルバム：${album.titleJa || album.title || ''}`);
+    if (Array.isArray(song.tags) && song.tags.length > 0) {
+      parts.push(`ジャンル：${song.tags.join('・')}`);
+    }
+    if (typeof SITE_INFO !== 'undefined' && SITE_INFO.description) {
+      parts.push(SITE_INFO.description);
+    }
+    const composed = parts.join(' ／ ').slice(0, 160);
+    return composed || `${song.title || '楽曲詳細'} — 鏡面人世`;
+  }
+
+  /** meta タグの upsert ヘルパー（二重生成防止） */
+  function setMeta(attrKey, attrVal, content) {
+    let el = document.querySelector(`meta[${attrKey}="${attrVal}"]`);
+    if (!el) {
+      el = document.createElement('meta');
+      el.setAttribute(attrKey, attrVal);
+      document.head.appendChild(el);
+    }
+    el.setAttribute('content', content);
+  }
+
+  /** link タグの upsert ヘルパー（canonical 等） */
+  function setLink(rel, href) {
+    let el = document.querySelector(`link[rel="${rel}"]`);
+    if (!el) {
+      el = document.createElement('link');
+      el.setAttribute('rel', rel);
+      document.head.appendChild(el);
+    }
+    el.setAttribute('href', href);
+  }
+
+  /** JSON-LD の script タグを upsert する（id で重複防止） */
+  function injectJsonLd(id, data) {
+    let el = document.getElementById(id);
+    if (!el) {
+      el = document.createElement('script');
+      el.type = 'application/ld+json';
+      el.id   = id;
+      document.head.appendChild(el);
+    }
+    el.textContent = JSON.stringify(data, null, 2);
+  }
+
+  // ── ヒーロー（タイトル・英語サブタイトル・読み・デコ文字・アルバム表記） ──
+  function renderHero(song, album) {
+    document.getElementById('song-title').textContent = song.title || '';
+    document.getElementById('song-reading').textContent = song.reading || '';
+
+    // 英語サブタイトル（未設定なら非表示）
+    const titleEnEl = document.getElementById('song-title-en');
+    if (song.titleEn) {
+      titleEnEl.textContent = song.titleEn;
+      titleEnEl.style.display = '';
+    } else {
+      titleEnEl.style.display = 'none';
+    }
+
+    // デコテキスト：| で列を区切る（例 "炎上|江戸" → 2列）
+    // decoText未設定ならタイトル先頭4文字を1列で表示
+    const decoEl = document.getElementById('song-deco');
+    const decoRaw = song.decoText || (song.title ? song.title.slice(0, 4) : '');
+    decoEl.innerHTML = '';
+    decoRaw.split('|').forEach(col => {
+      const span = document.createElement('span');
+      span.className = 'deco-col';
+      span.textContent = col.trim();
+      decoEl.appendChild(span);
+    });
+
+    // アルバム表記（アルバムが見つからない場合は空表示のまま）
+    document.getElementById('song-album').textContent = album
+      ? `${album.subtitle || ''} 「${album.title || album.titleJa || ''}」 / Track ${song.track ?? '-'}`
+      : '';
+  }
+
+  // ── タグ ──
+  function renderTags(song) {
+    const tagsEl = document.getElementById('song-tags');
+    tagsEl.innerHTML = '';
+    if (Array.isArray(song.tags)) {
+      song.tags.forEach(tag => {
+        const span = document.createElement('span');
+        span.className = 'tag';
+        span.textContent = tag;
+        tagsEl.appendChild(span);
+      });
+    }
+  }
+
+  // ── ヒーロー背景色 ──
+  function renderHeroBackground(song) {
+    const color = song.color || '#1a1108';
+    document.getElementById('song-hero').style.background =
+      `radial-gradient(ellipse at 20% 50%, ${color}cc 0%, rgba(26,14,4,0.85) 70%)`;
+  }
+
+  // ── YouTube動画 ──
+  function renderVideo(song) {
+    const videoArea = document.getElementById('video-area');
+    videoArea.innerHTML = '';
+
+    if (song.youtubeId) {
+      const placeholder = document.createElement('div');
+      placeholder.className = 'youtube-placeholder';
+      placeholder.innerHTML = `
+        <div class="play-icon">▶</div>
+        <span>動画を再生する</span>
+      `;
+      placeholder.addEventListener('click', () => {
+        placeholder.outerHTML = '';
+        const wrap = document.createElement('div');
+        wrap.className = 'youtube-wrap';
+        wrap.innerHTML = `<iframe
+          src="https://www.youtube.com/embed/${song.youtubeId}?autoplay=1&rel=0"
+          title="${song.title || ''}"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>`;
+        videoArea.appendChild(wrap);
+      });
+      videoArea.appendChild(placeholder);
+    } else {
+      videoArea.innerHTML = '<p style="color:var(--usuzumi);font-size:0.8rem;letter-spacing:0.1em;padding:2rem 0;">動画はまだ公開されていません。</p>';
+    }
+  }
+
+  // ── 曲紹介文 ──
+  function renderDescription(song) {
+    document.getElementById('song-desc').textContent = song.description || '';
+  }
+
+  // ── リリースノート（メタ情報テーブル） ──
+  function renderMeta(song, album) {
+    const metaEl = document.getElementById('song-meta');
+    metaEl.innerHTML = '';
+    const metas = [
+      ['リリース',     song.releaseDate || '—'],
+      ['収録アルバム', (album && (album.title || album.titleJa)) || '—'],
+      ['トラック',     song.track ? `Track ${song.track}` : '—'],
+    ];
+    metas.forEach(([k, v]) => {
+      const row = document.createElement('div');
+      row.className = 'song-meta-row';
+      row.innerHTML = `<span class="song-meta-key">${k}</span><span class="song-meta-val">${v}</span>`;
+      metaEl.appendChild(row);
+    });
+  }
+
+  // ── 歌詞（日英） ──
+  function renderLyrics(song) {
+    buildLyrics(song.lyricsJa || '', song.lyricsEn || '');
+
+    // 折りたたみトグル
+    const lyricsBox = document.getElementById('lyrics-box');
+    const toggle = document.getElementById('lyrics-toggle');
+    let expanded = false;
+    toggle.onclick = () => {
+      expanded = !expanded;
+      lyricsBox.classList.toggle('lyrics-hidden', !expanded);
+      toggle.textContent = expanded ? '折りたたむ' : '全て表示';
+    };
+
+    // 日英切り替え
+    const lyricsBody = document.getElementById('lyrics-body');
+    const btnBilingual = document.getElementById('btn-bilingual');
+    const btnJaOnly = document.getElementById('btn-ja-only');
+
+    btnBilingual.onclick = () => {
+      lyricsBody.classList.remove('ja-only');
+      btnBilingual.classList.add('active');
+      btnJaOnly.classList.remove('active');
+    };
+    btnJaOnly.onclick = () => {
+      lyricsBody.classList.add('ja-only');
+      btnJaOnly.classList.add('active');
+      btnBilingual.classList.remove('active');
+    };
+  }
+
+  // 歌詞テキストを日英1行ペア・段落単位で構築
+  function buildLyrics(jaText, enText) {
+    const body = document.getElementById('lyrics-body');
+    body.innerHTML = '';
+
+    const jaLines = (jaText || '').split('\n');
+    const enLines = (enText || '').split('\n');
+
+    const paragraphs = [];
+    let currentPara = [];
+
+    jaLines.forEach((jaLine, i) => {
+      const enLine = enLines[i] ?? '';
+      if (jaLine.trim() === '' && enLine.trim() === '') {
+        if (currentPara.length > 0) {
+          paragraphs.push(currentPara);
+          currentPara = [];
+        }
+      } else {
+        currentPara.push({ ja: jaLine, en: enLine });
+      }
+    });
+    if (currentPara.length > 0) paragraphs.push(currentPara);
+
+    paragraphs.forEach(para => {
+      const paraEl = document.createElement('div');
+      paraEl.className = 'lyrics-paragraph';
+      para.forEach(({ ja, en }) => {
+        const pair = document.createElement('div');
+        pair.className = 'lyrics-line-pair';
+        pair.innerHTML = `
+          <span class="lyrics-line-ja">${ja || '　'}</span>
+          <span class="lyrics-line-en">${en || ''}</span>
+        `;
+        paraEl.appendChild(pair);
+      });
+      body.appendChild(paraEl);
+    });
+  }
+
+  // ── アートワーク（曲固有 → アルバム流用 → 非表示の優先順） ──
+  function renderArtwork(song, album) {
+    const artworkSrc = song.artwork || (album && album.artwork) || '';
+    const artworkSection = document.getElementById('song-artwork-section');
+
+    if (!artworkSrc) {
+      artworkSection.style.display = 'none';
+      return;
+    }
+
+    artworkSection.style.display = '';
+    const img = document.getElementById('song-artwork-img');
+    img.src = artworkSrc;
+    img.alt = song.title || '';
+
+    // キャプション：曲固有アートなら何も出さず、アルバム流用なら表示
+    const cap = document.getElementById('song-artwork-caption');
+    cap.textContent = (!song.artwork && album) ? (album.titleJa || album.title || '') : '';
+  }
+
+  // ── 試聴プレイヤー（30秒固定・シーク不可・他曲再生時は自動停止） ──
+  function renderPreviewPlayer(song) {
+    const previewSection = document.getElementById('preview-section');
+    const purchaseEl     = document.getElementById('preview-purchase');
+
+    if (!song.previewAudio) {
+      previewSection.style.display = 'none';
+      return;
+    }
+
+    previewSection.style.display = '';
+    purchaseEl.innerHTML = '';
+
+    const playBtn = document.getElementById('preview-play-btn');
+    const bar     = document.getElementById('preview-bar');
+    const dot     = document.getElementById('preview-dot');
+    const curEl   = document.getElementById('preview-cur');
+    const durEl   = document.getElementById('preview-dur');
+
+    const PREVIEW_LIMIT = 30; // 試聴上限（秒）
+    const fmt = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
+
+    if (!window._previewAudio) window._previewAudio = null;
+    const audio = new Audio(song.previewAudio);
+    audio.loop = false;
+    audio.preload = 'metadata';
+
+    function resetUI() {
+      playBtn.textContent = '▶';
+      playBtn.classList.remove('playing');
+      playBtn.style.paddingLeft = '2px';
+      bar.style.width = '0%';
+      dot.style.left = '0%';
+      curEl.textContent = '0:00';
+    }
+
+    audio.addEventListener('loadedmetadata', () => {
+      durEl.textContent = fmt(PREVIEW_LIMIT);
+    });
+
+    audio.addEventListener('timeupdate', () => {
+      if (!audio.duration) return;
+
+      // 30秒で強制停止（試聴のみ・フル再生は外部リンクへ誘導する仕様）
+      if (audio.currentTime >= PREVIEW_LIMIT) {
+        audio.pause();
+        audio.currentTime = 0;
+        window._previewAudio = null;
+        resetUI();
+        return;
+      }
+
+      const pct = (audio.currentTime / PREVIEW_LIMIT) * 100;
+      bar.style.width = pct + '%';
+      dot.style.left = pct + '%';
+      curEl.textContent = fmt(audio.currentTime);
+    });
+
+    audio.addEventListener('ended', () => {
+      window._previewAudio = null;
+      resetUI();
+    });
+
+    playBtn.onclick = () => {
+      // 他の曲が再生中なら停止（同時再生防止）
+      if (window._previewAudio && window._previewAudio !== audio) {
+        window._previewAudio.pause();
+        window._previewAudio.currentTime = 0;
+      }
+
+      if (audio.paused) {
+        audio.play();
+        window._previewAudio = audio;
+        playBtn.textContent = '■';
+        playBtn.classList.add('playing');
+        playBtn.style.paddingLeft = '0';
+      } else {
+        audio.pause();
+        window._previewAudio = null;
+        resetUI();
+      }
+    };
+
+    // 配信リンク（Bandcamp / BASE）
+    if (song.bandcamp) {
+      purchaseEl.appendChild(makePurchaseLink(
+        song.bandcamp, 'purchase-btn-listen', '♪', 'フルで聴く（Bandcamp）'
+      ));
+    }
+    if (song.base) {
+      purchaseEl.appendChild(makePurchaseLink(
+        song.base, 'purchase-btn-buy', '◇', '購入する（BASE）'
+      ));
+    }
+  }
+
+  function makePurchaseLink(url, cls, icon, label) {
+    const a = document.createElement('a');
+    a.href = url;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    a.className = `purchase-btn ${cls}`;
+    a.innerHTML = `<span class="purchase-btn-icon">${icon}</span>${label}`;
+    return a;
+  }
+
+  // ── 関連曲（同アルバム内の他の曲） ──
+  function renderRelated(song) {
+    const relatedSection = document.querySelector('.song-related');
+    const relatedGrid = document.getElementById('related-grid');
+    relatedGrid.innerHTML = '';
+
+    const allSongs = typeof SONGS !== 'undefined' ? SONGS : [];
+    const related = allSongs.filter(s => s.album === song.album && s.id !== song.id);
+
+    if (related.length > 0) {
+      related.forEach(s => relatedGrid.appendChild(createSongCard(s)));
+      relatedSection.style.display = '';
+    } else {
+      relatedSection.style.display = 'none';
+    }
+  }
+
+  /**
+   * renderPrevNext — 前の曲・次の曲ナビゲーションを生成する
+   * ─────────────────────────────────────────────────────
+   * 並び順は data.js の SONGS 配列順（インデックス順）を使用する。
+   *
+   * 表示ルール：
+   *  - 最初の曲なら「← 前の曲」は非表示
+   *  - 最後の曲なら「次の曲 →」は非表示
+   *  - 両方とも存在しない（曲が1曲のみ）ならナビ自体を非表示
+   *
+   * 各ボタンには ジャケット画像（なければ楽符アイコン）+ 曲名 + 読みを表示する。
+   */
+  function renderPrevNext(song) {
+    const nav = document.getElementById('song-prevnext');
+    nav.innerHTML = '';
+
+    const allSongs = typeof SONGS !== 'undefined' ? SONGS : [];
+    const idx = allSongs.findIndex(s => s.id === song.id);
+    if (idx === -1) { nav.style.display = 'none'; return; }
+
+    const prevSong = idx > 0                    ? allSongs[idx - 1] : null;
+    const nextSong = idx < allSongs.length - 1  ? allSongs[idx + 1] : null;
+
+    if (!prevSong && !nextSong) { nav.style.display = 'none'; return; }
+
+    // 片方だけの場合のクラス（CSS でgrid全幅にする）
+    if (!prevSong) nav.classList.add('only-next');
+    if (!nextSong) nav.classList.add('only-prev');
+
+    if (prevSong) nav.appendChild(makePnBtn(prevSong, 'prev'));
+    if (nextSong) nav.appendChild(makePnBtn(nextSong, 'next'));
+
+    nav.style.display = '';
+  }
+
+  /**
+   * 前/次ボタン要素を生成する。
+   * @param {Object} targetSong - リンク先の曲データ
+   * @param {'prev'|'next'} dir  - 方向
+   */
+  function makePnBtn(targetSong, dir) {
+    const a = document.createElement('a');
+    a.href      = `song.html?id=${targetSong.id}`;
+    a.className = `pn-btn pn-${dir}`;
+    a.setAttribute('aria-label', dir === 'prev' ? '前の曲' : '次の曲');
+
+    // ジャケット画像またはプレースホルダー
+    const imgSrc = targetSong.artwork || '';
+    const imgEl  = imgSrc
+      ? `<img class="pn-img" src="${imgSrc}" alt="${escHtmlPN(targetSong.title || '')}" loading="lazy">`
+      : `<div class="pn-img-placeholder" aria-hidden="true">♪</div>`;
+
+    const label = dir === 'prev' ? '← PREV' : 'NEXT →';
+
+    a.innerHTML = `
+      ${imgEl}
+      <div class="pn-info">
+        <span class="pn-label">${label}</span>
+        <div class="pn-title">${escHtmlPN(targetSong.title || '')}</div>
+        <div class="pn-reading">${escHtmlPN(targetSong.reading || '')}</div>
+      </div>
+    `;
+    return a;
+  }
+
+  // XSS対策：song.htmlのrenderPrevNext専用のエスケープ関数
+  function escHtmlPN(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  // ── 指定IDの楽曲が存在しない場合の表示 ──
+  function renderNotFound() {
+    document.title = '楽曲が見つかりません | 鏡面人世';
+    document.getElementById('song-title').textContent = '楽曲が見つかりません';
+    document.getElementById('song-reading').textContent = '';
+    document.getElementById('song-album').textContent = '';
+    document.getElementById('song-deco').innerHTML = '';
+
+    document.getElementById('song-desc').innerHTML =
+      '<p style="color:var(--usuzumi);font-size:0.85rem;letter-spacing:0.1em;padding:1rem 0;">' +
+      '指定された楽曲は見つかりませんでした。URLをご確認いただくか、' +
+      '<a href="songs.html" style="color:var(--kin);text-decoration:underline;">楽曲一覧</a>へお戻りください。' +
+      '</p>';
+
+    // 該当データが無い以上、各セクションは非表示にする
+    document.getElementById('preview-section').style.display = 'none';
+    document.getElementById('song-artwork-section').style.display = 'none';
+    document.querySelector('.song-related').style.display = 'none';
+    document.getElementById('video-area').innerHTML = '';
+    document.getElementById('song-meta').innerHTML = '';
+    document.getElementById('lyrics-body').innerHTML = '';
+
+    setTimeout(initFadeIn, 100);
+  }
+})();
+</script>
+</body>
+</html>
