@@ -94,6 +94,68 @@
       color: var(--kin);
       opacity: 0.85;
     }
+    
+    /* ============================================================
+       検索ボックス
+       songs.html 専用。style.css には追加しない。
+       ============================================================ */
+    .search-wrap {
+      position: relative;
+      margin-bottom: 1.2rem;
+    }
+
+    .search-input {
+      width: 100%;
+      background: rgba(10,6,2,0.6);
+      border: 1px solid rgba(201,168,76,0.28);
+      color: var(--washi);
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      padding: 0.75rem 2.8rem 0.75rem 1rem;
+      outline: none;
+      transition: border-color 0.25s;
+      -webkit-appearance: none;
+      border-radius: 0;
+    }
+    .search-input::placeholder { color: var(--usuzumi); }
+    .search-input:focus { border-color: rgba(201,168,76,0.7); }
+
+    /* クリアボタン（✕） */
+    .search-clear {
+      position: absolute;
+      right: 0.8rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--usuzumi);
+      font-size: 1rem;
+      line-height: 1;
+      padding: 0.3rem;
+      display: none; /* 入力があるときだけ表示 */
+      transition: color 0.2s;
+    }
+    .search-clear:hover { color: var(--kin-light); }
+
+    /* 件数表示 */
+    .songs-count {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: var(--usuzumi);
+      margin-bottom: 1.5rem;
+    }
+
+    /* 検索0件メッセージ */
+    .search-empty {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--usuzumi);
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      line-height: 2;
+      }
   </style>
 </head>
 <body>
