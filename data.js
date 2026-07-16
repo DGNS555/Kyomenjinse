@@ -1951,6 +1951,12 @@ const SITE_INFO = {
  */
 const NEWS = [
   // ↓ ここに追記（新しいものを上に）
+   {
+  date: "Coming Soon",
+  tag:  "Streaming",
+  text: "2nd Album「人情景 - Life in Ukiyo」全曲ストリーミング配信予定！",
+  url:  "https://kyomenjinse.bandcamp.com/album/life-in-ukiyo"
+  },
  {
   date: "2026.07.07",
   tag:  "Streaming",
