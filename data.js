@@ -1960,19 +1960,19 @@ const NEWS = [
  {
   date: "2026.07.07",
   tag:  "Streaming",
-  text: "Single「子守下手 - A Clumsy Lullaby」AppleMusic,YoutubeMusicにてストリーミング配信開始！他ストアも順次配信予定。",
+  text: "Single「子守下手 - A Clumsy Lullaby」各配信ストアにてストリーミング配信中！",
   url:  "https://kyomenjinse.bandcamp.com/album/life-in-ukiyo"
   },
   {
   date: "2026.07.02",
   tag:  "Release",
-  text: "2nd Album「人情景 - Life in Ukiyo」Bandcampにてリリース販売開始！",
+  text: "2nd Album「人情景 - Life in Ukiyo」Bandcampにて販売中！",
   url:  "https://kyomenjinse.bandcamp.com/album/life-in-ukiyo"
   },
   {
   date: "2026.06.25",
   tag:  "Streaming",
-  text: "Single「日々上々 - Days Getting Better」ストリーミング配信開始！",
+  text: "Single「日々上々 - Days Getting Better」各ストアにてストリーミング配信中！",
   url:  "https://kyomenjinse.bandcamp.com/album/life-in-ukiyo"
   },
 ];
