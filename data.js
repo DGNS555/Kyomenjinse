@@ -464,8 +464,8 @@ Me… you… or perhaps someone else?`,
     base: "https://kyoumenjinse.base.shop"                 // BASEのURL
   },
   {
-    id: "04",
-    title: "kage-asobi",
+    id: "kage-asobi",
+    title: "影遊び",
     titleEn: "Play with Shadows",
     reading: "かげあそび",
     album: "album-01",
