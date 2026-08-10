@@ -1954,7 +1954,7 @@ const NEWS = [
    {
   date: "2026.08.03",
   tag:  "Streaming",
-  text: "2nd Album「人情景 - Life in Ukiyo」Apple Music/YouTube Music/dヒッツ/OTORAKU/WEDDING MUSIC BOXにて配信開始！他ストアも順次ストリーミング配信開始します。",
+  text: "2nd Album「人情景 - Life in Ukiyo」Spotify/Apple Music/YouTube Musicにて配信開始！他ストアも順次ストリーミング配信開始します。",
   url:  "https://kyomenjinse.bandcamp.com/album/life-in-ukiyo"
   },
  {
