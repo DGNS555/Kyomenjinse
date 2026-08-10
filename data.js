@@ -1951,6 +1951,12 @@ const SITE_INFO = {
  */
 const NEWS = [
   // ↓ ここに追記（新しいものを上に）
+  {
+  date: "2026.08.12",
+  tag:  "Release & Streaming",
+  text: "3rd Mini Album「和夏 - Nodoka」Apple Music/YouTube Musicにて2026/08/12配信開始！他ストアも順次ストリーミング配信開始します。",
+  url:  "https://kyomenjinse.bandcamp.com/album/nodoka"
+  },
    {
   date: "2026.08.03",
   tag:  "Streaming",
