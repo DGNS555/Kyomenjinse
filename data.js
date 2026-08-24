@@ -1951,6 +1951,12 @@ const SITE_INFO = {
  */
 const NEWS = [
   // ↓ ここに追記（新しいものを上に）
+　{
+  date: "Coming Soon",
+  tag:  "Music Video",
+  text: "4枚目アルバム収録予定曲「三千世界 - Sanzen Sekai」のMV制作中。",
+  url:  ""
+  },
   {
   date: "2026.08.12",
   tag:  "Release & Streaming",
