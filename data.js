@@ -45,6 +45,10 @@ const LEGACY_ID_MAP = {
   '13': 'aigasa',
   '14': 'watashi-bune',
   '15': 'on-my-way',
+  '16': 'natsu-zora',
+  '17': 'semishigure',
+  '18': 'fu-rin',
+  '19': 'hanabi',
 };
 const SONGS = [
   {
@@ -1919,6 +1923,20 @@ const ALBUMS = [
     description: "セカンドアルバム。全7曲収録。",
     trackCount: 7,
     concept: "笑えど泣けど生き暮らす。長屋、人の世、此処にあり。"
+  },
+  {
+    id: "album-03",
+    title: "和夏 - Nodoka", // 後方互換のため残す
+    titleJa: "和夏",
+    titleEn: "Nodoka",
+    subtitle: "3rd Mini Album",
+    releaseDate: "2026.08.12",
+    artwork: "images/albums/album-03.png",             // アルバムアートワーク（例: "images/albums/album-01.jpg"）
+    coverColor: "#261408",
+    coverAccent: "#c9a84c",
+    description: "鏡面人世サードミニアルバム。全4曲収録。",
+    trackCount: 4,
+    concept: "いつもの鏡面人世とは少し違う、夏の寄り道。"
   }
 ];
 
